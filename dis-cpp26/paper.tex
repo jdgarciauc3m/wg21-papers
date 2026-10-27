@@ -1,0 +1,61 @@
+%----------------------------------------------------------
+% Document class
+%
+\documentclass[10pt,a4paper,oneside,final,notitlepage]{article}%
+
+%Geometry
+%\usepackage[a4paper,left=2cm,right=2cm,top=4cm,bottom=4cm,headsep=2cm,footskip=2cm]{geometry}
+%\usepackage[a4paper,left=2cm,right=2cm,top=4cm,bottom=4cm]{geometry}
+\usepackage[a4paper,margin=2cm]{geometry}
+
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.9}
+
+%\usepackage[bf,medium,raggedright]{titlesec}
+%\titleformat{\chapter}{\bfseries\Large}{\thechapter.}{.5em}{}
+%\titlespacing{\chapter}{0pt}{*1}{*1}
+
+%Package for todonotes
+%\usepackage[disable]{todonotes}
+%\usepackage{todonotes}
+
+\usepackage{url}
+\usepackage[citecolor=blue,linkcolor=blue,urlcolor=blue,colorlinks=true]{hyperref}
+
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\input{config-lst}
+
+\begin{document}
+
+\input{config}
+
+\noindent
+\textbf{Document Number}: \texttt{\paperid}\\
+\textbf{Date}: \paperdate\\
+\textbf{Reply to}: J. Daniel Garcia\\ 
+\textbf{e-mail}: \url{jdgarcia@inf.uc3m.es}\\
+\textbf{Audience}: All\\
+
+\title{\papertitle}
+\author{J. Daniel Garcia\\
+Computer Science and Engineering Department\\
+University Carlos III of Madrid
+}
+\date{}
+
+\begingroup
+\let\newpage\relax% Void the actions of \newpage
+\maketitle
+\endgroup
+
+\input{contents}
+
+\bibliographystyle{unsrt}
+\bibliography{ref}
+
+\end{document}
