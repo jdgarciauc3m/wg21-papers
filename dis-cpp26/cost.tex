@@ -1,6 +1,9 @@
 \section{Cost of contracts removal}
 
-In contrast with what is stated in P4433R0~\cite{p4433r0} is mostly editorial.
+\subsection{Removing the contracts feature}
+
+In contrast with what it is stated in P4433R0~\cite{p4433r0}, the removal is mostly 
+editorial.
 We believe that such removal consists of the following actions:
 
 \begin{itemize}
@@ -21,7 +24,49 @@ We believe that such removal consists of the following actions:
 
 \end{itemize}
 
+\vspace{1em}
+\begin{tcolorbox}[
+  colback=blue!8!white,
+  colframe=blue,
+  title={\textbf{Cost of removing contracts}},
+  breakable,
+  width=\textwidth,
+  boxrule=0.5pt
+  ]
+In summary, the removal is small, concentrated, and cleanly separable. According
+to Doumler et al.~\cite{p4433r0}, contracts wording total for 4,946 words. The
+whole standard contains around one million words. That is less than $0.5\%$ of
+the total text of the standard.
+\end{tcolorbox}
+
+\subsection{Removing the dependency in hardened implementation}
+
 Besides that, the specification of the hardened implementation needs to be
 decoupled from contracts. That is not so complicated as it might seem, as the
 initial specification of the hardened implementation did not include such
 coupling.
+
+In fact, the change requires modification of:
+
+\begin{itemize}
+
+\item
+Modification of one sentence in 4.1.1 (\texttt[intro.compliance.general]).
+
+\item
+Modification of one sentence in 16.3.2.4 (\texttt[structure.specifications]).
+
+\end{itemize}
+
+\vspace{1em}
+\begin{tcolorbox}[
+  colback=blue!8!white,
+  colframe=blue,
+  title={\textbf{Cost of removing hardening dependency}},
+  breakable,
+  width=\textwidth,
+  boxrule=0.5pt
+  ]
+The cost of this change is minimal as it requires changing two sentences in the
+standard.
+\end{tcolorbox}
