@@ -1,6 +1,6 @@
-\section{Cost of contracts removal}
+\section{Cost of C++26 Contracts removal}
 
-\subsection{Removing the contracts feature}
+\subsection{Removing the C++26 Contracts feature}
 
 In contrast with what it is stated in P4433R0~\cite{p4433r0}, the removal is mostly 
 editorial.
@@ -28,21 +28,21 @@ We believe that such removal consists of the following actions:
 \begin{tcolorbox}[
   colback=blue!8!white,
   colframe=blue,
-  title={\textbf{Cost of removing contracts}},
+  title={\textbf{Cost of removing C++26 Contracts}},
   breakable,
   width=\textwidth,
   boxrule=0.5pt
   ]
 In summary, the removal is small, concentrated, and cleanly separable. According
-to Doumler et al.~\cite{p4433r0}, contracts wording total for 4,946 words. The
-whole standard contains around one million words. That is less than $0.5\%$ of
-the total text of the standard.
+to Doumler et al.~\cite{p4433r0}, C++26 Contracts wording total for 4,946 words. The
+whole Standard contains around one million words. That is less than $0.5\%$ of
+the total text of the Standard.
 \end{tcolorbox}
 
 \subsection{Removing the dependency in hardened implementation}
 
 Besides that, the specification of the hardened implementation needs to be
-decoupled from contracts. That is not so complicated as it might seem, as the
+decoupled from C++26 Contracts. That is not so complicated as it might seem, as the
 initial specification of the hardened implementation did not include such
 coupling.
 
@@ -68,5 +68,5 @@ Modification of one sentence in 16.3.2.4 (\texttt[structure.specifications]).
   boxrule=0.5pt
   ]
 The cost of this change is minimal as it requires changing two sentences in the
-standard.
+Standard.
 \end{tcolorbox}
