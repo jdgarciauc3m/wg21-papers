@@ -18,6 +18,14 @@ postcondition assertion (9.4.2),}
 
 \end{modification}
 
+\begin{modification}[Modification of 6.1/8]
+An entity is a variable, structured binding, \stdremove{result binding,} function, 
+enumerator, type, type alias, non-static
+data member, bit-field, template, namespace, namespace alias, template parameter, function parameter, or
+init-capture. The underlying entity of an entity is that entity unless otherwise specified. A name denotes the
+underlying entity of the entity declared by each declaration that introduces the name.
+\end{modification}
+
 \begin{modification}[Modification to 6.3/10.2]
 \begin{itemize}[label=\textemdash]
 
@@ -57,6 +65,10 @@ that contains it; the smallest such scope is said to be the immediate scope at t
 between a program point \emph{P} and a scope \emph{S} (that does not contain
 \emph{P}) if it is or contains \emph{S} but does not
 contain \emph{P}.
+\end{modification}
+
+\begin{modification}[Removal of 6.4.2/13]
+\stdremove{The locus of a result-name-introducer (9.4.2) is immediately after it.}
 \end{modification}
 
 \begin{modification}[Removal to 6.4.10]
