@@ -232,11 +232,11 @@ A lambda-expression shall not have a \emph{capture-default} or
 \begin{itemize}[label=\textemdash]
 
 \item
-its innermost enclosing scope is a block scope (6.4.3),
+its innermost enclosing scope is a block scope (6.4.3), \stdadd{or}
 
 \item
 it appears within a default member initializer and its innermost enclosing scope is the corresponding
-class scope (6.4.7), or
+class scope (6.4.7)\stdadd{.}\stdremove{, or}
 
 \item
 \stdremove{it appears within a contract assertion and its innermost enclosing scope is the corresponding contract-
