@@ -1,5 +1,5 @@
 disresol.pdf:	*.tex ref.bib
-	latexmk -pdf -jobname=wording -outdir=final paper.tex
+	latexmk -pdf -jobname=D4446R0 -outdir=final paper.tex
 
 clean:
 	rm final/*
