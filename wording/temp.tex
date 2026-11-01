@@ -49,6 +49,16 @@ return type is dependent,}
 
 \end{modification}
 
+\begin{modification}[Modification of 13.9.2/15]
+Other than as specified above, the separately instantiated constructs of a
+specialization of a templated function are instantiated only when needed
+(14.5\stdremove{, 9.4.1}).  When such a construct is instantiated, the dependent
+names are looked up, the semantic constraints are checked, and the
+instantiation of any template used in the construct is done as if it were being
+done as part of instantiating the declaration of the specialization at that
+point.  
+\end{modification}
+
 \begin{modification}[Modification of 13.9.4/12]
 Whether an explicit specialization of a function or variable template is inline,
 constexpr, constinit, or consteval is determined by the explicit specialization
