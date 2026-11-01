@@ -11,16 +11,15 @@ the \emph{cv-qualifier-seq} used to generate the
 resulting type (see below).}
 \end{modification}
 
-\begin{modification}[Modification of 7.5.5.1/2]
-If an \emph{id-expression} E denotes a non-static non-type member of some class
-\texttt{C} at a point where the current
-class (7.5.3) is \texttt{X} and
+\begin{modification}[Modification to 7.5.5.1/2]
+If an id-expression \emph{E} denotes a non-static non-type member of some class
+\emph{C} at a point where the current class (7.5.3) is \emph{X} and
 
 \begin{itemize}[label=\textemdash]
 
 \item
-\emph{E} is potentially evaluated or \texttt{C} is \texttt{X} or a base class of
-\texttt{X}, and
+\emph{E} is potentially evaluated or \emph{C} is \emph{X} or a base class of
+\emph{X}, and
 
 \item
 \emph{E} is not the \emph{id-expression} of a class member access expression (7.6.1.5), and
@@ -29,20 +28,26 @@ class (7.5.3) is \texttt{X} and
 \emph{E} is not the \emph{id-expression} of a \emph{reflect-expression} (7.6.2.10), and
 
 \item
-if \emph{E} is a \emph{qualified-id}, \emph{E} is not the un-parenthesized
-operand of the unary \texttt{\&} operator (7.6.2.2),
+if \emph{E} is a \emph{qualified-id}, \emph{E} is not the un-parenthesized operand of
+the unary \& operator (7.6.2.2),
 
 \end{itemize}
 
 the \emph{id-expression} is transformed into a class member access expression
-using \texttt{(*this)} as the object expression.
-\stdremove{If this transformation occurs in the predicate of a precondition
-assertion of a constructor of \texttt{X} or a} \stdremove{postcondition
-assertion of a destructor of \texttt{X}, the expression is ill-formed.}
+using (\texttt{*this}) as the object expression.
+
+\stdremove{If this transformation occurs in the predicate of a precondition assertion of a constructor of X or a postcondition assertion of a destructor of X, the expression is ill-formed.}
 \newline
-\ldots\\
-\textbf{Note to editors}: Example 1 should be \textbf{completely removed}.
+
+NOTE 2 If C is not X or a base class of X, the class member access expression is ill-formed. Also, if the id-expression occurs within a static or explicit object member function, the class member access is ill-formed.
+\newline
+
+This transformation does not apply in the template definition context (13.8.3.2).
+\newline
+
+\stdremove{EXAMPLE 1} shall be \textbf{completely removed}.
 \end{modification}
+
 
 \begin{modification}[Removal of 7.5.5.2/6]
 \stdremove{Otherwise, if the \emph{unqualified-id} names a result binding
@@ -81,8 +86,7 @@ then the type of the expression is \texttt{const T}.}
 \end{modification}
 
 \begin{modification}[Removal of 7.5.5.2/8]
-\textbf{Note to editors}: In Example 2 all uses of \texttt{pre} and
-\texttt{post} shall be
+\textbf{Note to editors}: Example 2 shall be
 \textbf{completely removed}.
 \end{modification}
 
@@ -93,7 +97,7 @@ or template parameter object; and a prvalue
 otherwise (7.2.1); it is a bit-field if the identifier designates a bit-field.
 \end{modification}
 
-\begin{modification}[Removal of 7.5.2.2/13]
+\begin{modification}[Removal of 7.5.5.2/13]
 \stdremove{If an \emph{id-expression E} appears in the predicate of a function contract
 assertion attached to a function \emph{f} and
 denotes a function parameter of \emph{f} and the implementation introduces any temporary objects to hold the
@@ -114,104 +118,12 @@ postcondition assertion.}
 
 \end{modification}
 
-\begin{modification}[Removal of 7.5.2.2/14]
+\begin{modification}[Removal of 7.5.5.2/14]
 \stdremove{If an id-expression \emph{E} names a result binding in a postcondition assertion and the implementation introduces
 any temporary objects to hold the result object as specified in 6.8.7, and the postcondition assertion is
 sequenced before the initialization of the result object (7.6.1.3), \emph{E} refers to the most recently initialized such
 temporary object.}
 \end{modification}
-
-\begin{modification}[Modification to 7.5.5.1/2]
-If an id-expression \emph{E} denotes a non-static non-type member of some class
-\emph{C} at a point where the current class (7.5.3) is \emph{X} and
-
-\begin{itemize}[label=\textemdash]
-
-\item
-\emph{E} is potentially evaluated or \emph{C} is \emph{X} or a base class of
-\emph{X}, and
-
-\item
-\emph{E} is not the \emph{id-expression} of a class member access expression (7.6.1.5), and
-
-\item
-\emph{E} is not the \emph{id-expression} of a \emph{reflect-expression} (7.6.2.10), and
-
-\item
-if \emph{E} is a \emph{qualified-id}, \emph{E} is not the un-parenthesized operand of
-the unary \& operator (7.6.2.2),
-
-\end{itemize}
-
-the \emph{id-expression} is transformed into a class member access expression
-using (\texttt{*this}) as the object expression.
-
-\stdremove{If this transformation occurs in the predicate of a precondition assertion of a constructor of X or a postcondition assertion of a destructor of X, the expression is ill-formed.}
-\newline
-
-NOTE 2 If C is not X or a base class of X, the class member access expression is ill-formed. Also, if the id-expression occurs within a static or explicit object member function, the class member access is ill-formed.
-\newline
-
-This transformation does not apply in the template definition context (13.8.3.2).
-\newline
-
-\stdremove{EXAMPLE 1} shall be \textbf{completely removed}.
-\end{modification}
-
-\begin{modification}[Removal of 7.5.5.2/7]
-\stdremove{Otherwise, if the \emph{unqualified-id} appears in the predicate of a contract 
-assertion \emph{C} (6.11) and the entity is}
-
-\begin{itemize}[label=\textemdash]
-
-\item
-\stdremove{a variable declared outside of \emph{C} of object type \texttt{T},}
-
-\item
-\stdremove{a variable or template parameter declared outside of \emph{C} of type
-“reference to \texttt{T}”, or}
-
-\item
-\stdremove{a structured binding of type \texttt{T} whose corresponding variable is
-declared outside of \emph{C},}
-
-\end{itemize}
-
-\stdremove{then the type of the expression is \texttt{const T}}.
-
-\end{modification}
-
-\begin{modification}[Removal of 7.5.5.2/13]
-\stdremove{If an \emph{id-expression E} appears in the predicate of a function contract 
-assertion attached to a function \emph{f} and
-denotes a function parameter of \emph{f} and the implementation introduces any temporary objects to hold the
-value of that parameter as specified in 6.8.7,}
-
-\begin{itemize}[label=\textemdash]
-
-\item
-\stdremove{if the contract assertion is a precondition assertion and the evaluation of the precondition assertion is
-sequenced before the initialization of the parameter object, \emph{E} refers to the most recently initialized
-such temporary object, and}
-
-\item
-\stdremove{if the contract assertion is a postcondition assertion, it is
-unspecified whether \emph{E} refers to one of the
-temporary objects or the parameter object; the choice is consistent within a single evaluation of a
-postcondition assertion.}
-
-\end{itemize}
-
-\end{modification}
-
-\begin{modification}[Removal of 7.5.5.2/14]
-\stdremove{If an \emph{id-expression E} names a result binding in a postcondition assertion and the implementation introduces
-any temporary objects to hold the result object as specified in 6.8.7, and the postcondition assertion is
-sequenced before the initialization of the result object (7.6.1.3), \emph{E} refers to the most recently initialized such
-temporary object.}
-\end{modification}
-
-
 
 \begin{modification}[Removal of 7.5.5.3/7]
 \stdremove{If \emph{Q} appears in the predicate of a contract assertion \emph{C}
@@ -231,6 +143,10 @@ outside of \emph{C},}
 \end{itemize}
 
 \stdremove{then the type of the expression is \texttt{const T}.}
+\end{modification}
+
+\begin{modification}[Modification of 7.5.5.3/8]
+\stdremove{Otherwise, the} \stdadd{The} type of the expression is the type of the result.
 \end{modification}
 
 \begin{modification}[Modification to 7.5.6.1]
@@ -333,7 +249,8 @@ assertion scope (6.4.10).}
 \begin{modification}[Modification to 7.5.9/2.5]
 Otherwise, if \emph{S} is a variable or a structured binding, \emph{S} shall either have static or thread storage duration
 or shall inhabit a scope enclosing the expression. The expression \emph{E} is an lvalue referring to the object
-or function \emph{X} associated with or referenced by \emph{S}, and is a
+or function \emph{X} associated with or referenced by \emph{S}, \stdadd{has the
+same type as that of \emph{S},} and is a
 bit-field if and only if \emph{X} is a bit-field. \stdremove{If \emph{E}
 appears in the predicate of a contract assertion \emph{C} (6.11) and \emph{S}
 is}
@@ -436,7 +353,7 @@ immediate scope is a namespace scope that follows the initializing declaration o
 \end{modification}
 
 \begin{modification}[Modification of 7.7.5/5]
-\textbf{Change the following lines}:
+\textbf{Note to editors}: \textbf{Remove} the following lines from example
 \begin{verbatim}
 constexpr int l(int c) pre(c >= 2) {
   return (c % 2 == 0) ? c / 0 : c;
@@ -447,17 +364,6 @@ const int i2 = l(2); // dynamic initialization; undefined behavior
 const int i3 = l(3); // static initialization; value of 3
 \end{verbatim}
 
-\textbf{by these other lines}:
-
-\begin{verbatim}
-constexpr int l(int c) {
-  return (c % 2 == 0) ? c / 0 : c;
-}
-const int i0 = l(0); // dynamic initialization; undefined behavior
-const int i1 = l(1); // static initialization; value of 1 
-const int i2 = l(2); // dynamic initialization; undefined behavior
-const int i3 = l(3); // static initialization; value of 3
-\end{verbatim}
 \end{modification}
 
 \begin{modification}[Modification to 7.7.7 Note 64]

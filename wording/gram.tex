@@ -56,11 +56,14 @@ init-declarator :\\
 \stdremove{postcondition-specifier :}\\
 \tabto{1em}\stdremove{post attribute-specifier-seq\textsubscript{opt} ( result-name-introducer\textsubscript{opt} conditional-expression )}\\
 \ldots\\
-\stdremove{function-definition :}\\
-\tabto{1em}\stdremove{attribute-specifier-seq\textsubscript{opt} decl-specifier-seq\textsubscript{opt} declarator virt-specifier-seq\textsubscript{opt}}\\
-\tabto{1em}\stdremove{function-contract-specifier-seq\textsubscript{opt} function-body}\\
-\tabto{1em}\stdremove{attribute-specifier-seq\textsubscript{opt} decl-specifier-seq\textsubscript{opt} declarator requires-clause}\\
-\tabto{1em}\stdremove{function-contract-specifier-seq\textsubscript{opt} function-body}\\
+function-definition :\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} decl-specifier-seq\textsubscript{opt} declarator virt-specifier-seq\textsubscript{opt}\\
+\tabto{1em}\stdremove{function-contract-specifier-seq\textsubscript{opt}} function-body\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} decl-specifier-seq\textsubscript{opt} declarator requires-clause\\
+\tabto{1em}\stdremove{function-contract-specifier-seq\textsubscript{opt}} function-body\\
+\ldots\\
+\stdremove{result-name-introducer :}\\
+\tabto{1em}\stdremove{attributed-identifier :}\\
 \end{modification}
 
 \begin{modification}[Modifications to productions in A9]
