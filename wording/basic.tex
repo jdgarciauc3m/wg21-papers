@@ -26,6 +26,11 @@ init-capture. The underlying entity of an entity is that entity unless otherwise
 underlying entity of the entity declared by each declaration that introduces the name.
 \end{modification}
 
+\begin{modification}[Modification of 6.1/9]
+A \emph{local entity} is a variable with automatic storage duration (6.8.6.4), a structured binding (9.7) whose
+corresponding variable is such an entity, \stdremove{a result binding (9.4.2),} or the *this object (7.5.3).
+\end{modification}
+
 \begin{modification}[Modification of 6.3/10.2]
 \begin{itemize}[label=\textemdash]
 
@@ -67,11 +72,38 @@ between a program point \emph{P} and a scope \emph{S} (that does not contain
 contain \emph{P}.
 \end{modification}
 
+\begin{modification}[Modification of 6.4.1/5]
+A declaration is \emph{name-independent} if its name is \texttt{\_} (U+005F LOW
+LINE) and it declares
+
+\begin{itemize}[label=\textemdash]
+
+\item
+a variable, other than a function parameter, with automatic storage duration,
+
+\item
+a structured binding with no \emph{storage-class-specifier} and not inhabiting a namespace scope,
+
+\item
+\stdremove{a result binding (9.4.2),}
+
+\item
+the variable introduced by an \emph{init-capture}, or
+
+\item
+a non-static data member of other than an anonymous union.
+
+\end{itemize}
+
+\emph{Recommended practice}: Implementations should not emit a warning that a name-independent declaration is
+used or unused.
+\end{modification}
+
 \begin{modification}[Removal of 6.4.2/13]
 \stdremove{The locus of a result-name-introducer (9.4.2) is immediately after it.}
 \end{modification}
 
-\begin{modification}[Removal to 6.4.10]
+\begin{modification}[Removal of 6.4.10]
 Section 6.4.10 (\emph{Contract-assertion scope} [\texttt{basic.scope.contract}])
 shall be \textbf{completely removed}.
 \end{modification}
@@ -124,7 +156,8 @@ full-expression.
 
 \begin{modification}[Modification of 6.10.1/11]
 When invoking a function \emph{f} (whether or not the function is inline), every argument expression and the postfix
-expression designating \emph{f} are sequenced before \stdremove{every precondition assertion of f (9.4.1), which in turn are
+expression designating \emph{f} are sequenced before \stdremove{every
+precondition assertion of \emph{f} (9.4.1), which in turn are
 sequenced before} every expression or statement in the body of f\stdremove{, which in turn are sequenced before every
 postcondition assertion of \emph{f}}.
 \end{modification}
@@ -138,6 +171,6 @@ is equivalent to a return with operand \texttt{0} (see also 14.4).
 \end{modification}
 
 \begin{modification}[Removal of 6.11]
-Section 6.11 (\emph{Contract assertions} [basic.contract]) shall be completely
-removed.
+Section 6.11 (\emph{Contract assertions} [basic.contract]) shall be \textbf{completely
+removed}.
 \end{modification}
