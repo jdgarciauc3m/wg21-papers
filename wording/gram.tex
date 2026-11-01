@@ -17,7 +17,7 @@ trailing-return-type\textsubscript{opt}
 \tabto{1em}( parameter-declaration-clause ) lambda-specifier-seq\textsubscript{opt}
 noexcept-specifier\textsubscript{opt}
 attribute-specifier-seq\textsubscript{opt}\\
-\tabto{2em}trailing-return-typeopt requires-clause\textsubscript{opt}
+\tabto{2em}trailing-return-type\textsubscript{opt} requires-clause\textsubscript{opt}
 \stdremove{function-contract-specifier-seq\textsubscript{opt}}\\
 \end{modification}
 
@@ -40,7 +40,7 @@ assertion-statement}\\
 ( conditional-expression ) ;}
 \end{modification}
 
-\begin{modification}[Modifications to productions in A7]
+\begin{modification}[Modifications to productions in A.7]
 init-declarator :\\
 \tabto{1em}declarator initializer\\
 \tabto{1em}declarator requires-clause\textsubscript{opt}
@@ -66,7 +66,7 @@ function-definition :\\
 \tabto{1em}\stdremove{attributed-identifier :}\\
 \end{modification}
 
-\begin{modification}[Modifications to productions in A9]
+\begin{modification}[Modifications to productions in A.9]
 member-declarator :\\
 \tabto{1em}declarator virt-specifier-seq\textsubscript{opt}
 \stdremove{function-contract-specifier-seq\textsubscript{opt}} pure-specifier\textsubscript{opt}\\

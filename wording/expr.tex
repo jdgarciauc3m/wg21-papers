@@ -11,7 +11,7 @@ the \emph{cv-qualifier-seq} used to generate the
 resulting type (see below).}
 \end{modification}
 
-\begin{modification}[Modification to 7.5.5.1/2]
+\begin{modification}[Modification of 7.5.5.1/2]
 If an id-expression \emph{E} denotes a non-static non-type member of some class
 \emph{C} at a point where the current class (7.5.3) is \emph{X} and
 
@@ -45,7 +45,7 @@ NOTE 2 If C is not X or a base class of X, the class member access expression is
 This transformation does not apply in the template definition context (13.8.3.2).
 \newline
 
-\textbf{Note to editors}: \stdremove{EXAMPLE 1} shall be \textbf{completely removed}.
+\textbf{Note to Editors}: \stdremove{EXAMPLE 1} shall be \textbf{completely removed}.
 \end{modification}
 
 
@@ -86,7 +86,7 @@ then the type of the expression is \texttt{const T}.}
 \end{modification}
 
 \begin{modification}[Removal of 7.5.5.2/8]
-\textbf{Note to editors}: Example 2 shall be
+\textbf{Note to Editors}: Example 2 shall be
 \textbf{completely removed}.
 \end{modification}
 
@@ -149,7 +149,7 @@ outside of \emph{C},}
 \stdremove{Otherwise, the} \stdadd{The} type of the expression is the type of the result.
 \end{modification}
 
-\begin{modification}[Modification to 7.5.6.1]
+\begin{modification}[Modification of 7.5.6.1]
 lambda-expression :\\
 \tabto{1em}lambda-introducer attribute-specifier-seq\textsubscript{opt} lambda-declarator
 compound-statement\\
@@ -173,7 +173,7 @@ trailing-return-type\textsubscript{opt}
 \tabto{1em}( parameter-declaration-clause ) lambda-specifier-seq\textsubscript{opt}
 noexcept-specifier\textsubscript{opt}
 attribute-specifier-seq\textsubscript{opt}\\
-\tabto{2em}trailing-return-typeopt requires-clause\textsubscript{opt}
+\tabto{2em}trailing-return-type\textsubscript{opt} requires-clause\textsubscript{opt}
 \stdremove{function-contract-specifier-seq\textsubscript{opt}}\\
 
 lambda-specifier :
@@ -186,14 +186,13 @@ lambda-specifier-seq :\\
 \tabto{1em}lambda-specifier lambda-specifier-seq\textsubscript{opt}
 \end{modification}
 
-\begin{modification}[Modification to 7.5.6.2/7]
+\begin{modification}[Modification of 7.5.6.2/7]
 The function call operator or operator template is a static member function or static member function
 template (11.4.9.2) if the \emph{lambda-expression}’s
 \emph{parameter-declaration-clause} is followed by static. Otherwise,
 it is a non-static member function or member function template (11.4.3) that is declared const (11.4.3) if
 and only if the \emph{lambda-expression}’s \emph{parameter-declaration-clause}
-is not followed by \texttt{mutable} and the lambda-
-declarator does not contain an explicit object parameter. It is neither virtual nor declared volatile.
+is not followed by \texttt{mutable} and the \emph{lambda-declarator} does not contain an explicit object parameter. It is neither virtual nor declared volatile.
 Any \emph{noexcept-specifier} \stdremove{or \emph{function-contract-specifier}
 (9.4.1)} specified on a \emph{lambda-expression} applies to the
 corresponding function call operator or operator template. An
@@ -217,7 +216,7 @@ contract assertions (9.4.1) of the call operator or operator template of
 within the body of \emph{L}, the program is ill-formed.}
 \newline
 
-\stdremove{NOTE: 4 Adding a contract assertion to an existing C ++ program
+\stdremove{NOTE 4 Adding a contract assertion to an existing C++ program
 cannot cause additional captures.}
 \newline
 
@@ -225,7 +224,7 @@ cannot cause additional captures.}
 corresponding code example}.
 \end{modification}
 
-\begin{modification}[Modification to 7.5.6.3/3]
+\begin{modification}[Modification of 7.5.6.3/3]
 A lambda-expression shall not have a \emph{capture-default} or
 \emph{simple-capture} in its \emph{lambda-introducer} unless
 
@@ -239,14 +238,14 @@ it appears within a default member initializer and its innermost enclosing scope
 class scope (6.4.7)\stdadd{.}\stdremove{, or}
 
 \item
-\stdremove{it appears within a contract assertion and its innermost enclosing scope is the corresponding contract-
-assertion scope (6.4.10).}
+\stdremove{it appears within a contract assertion and its innermost enclosing
+scope is the corresponding \emph{contract-assertion} scope (6.4.10).}
 
 \end{itemize}
 
 \end{modification}
 
-\begin{modification}[Modification to 7.5.9/2.5]
+\begin{modification}[Modification of 7.5.9/2.5]
 Otherwise, if \emph{S} is a variable or a structured binding, \emph{S} shall either have static or thread storage duration
 or shall inhabit a scope enclosing the expression. The expression \emph{E} is an lvalue referring to the object
 or function \emph{X} associated with or referenced by \emph{S}, \stdadd{has the
@@ -272,7 +271,7 @@ outside of \emph{C},}
 the same type as that of \emph{S}}.
 \newline
 
-NOTE: 2 The type of a \emph{splice-expression} designating a variable or structured binding of reference type will be
+NOTE 2 The type of a \emph{splice-expression} designating a variable or structured binding of reference type will be
 adjusted to a non-reference type (7.2.2).
 
 \end{modification}
@@ -306,7 +305,7 @@ value as specified in 6.8.7, the evaluation of each postcondition assertion is i
 respect to the initialization of any of those temporaries or the result object. These evaluations, in turn, are
 sequenced before the destruction of any function parameters.}
 \end{modification}
-\begin{modification}[Modification to 7.6.2.4/2]
+\begin{modification}[Modification of 7.6.2.4/2]
 An \emph{await-expression} shall appear only as a potentially evaluated
 expression within the \emph{compound-statement} of
 a \emph{function-body} or \emph{lambda-expression}, in either case outside of a
@@ -322,7 +321,7 @@ assertion (6.11).} A context within a function where an \emph{await-expression} 
 context of the function.
 \end{modification}
 
-\begin{modification}[Modification to 7.7.4]
+\begin{modification}[Modification of 7.7.4]
 A variable \texttt{v} is \emph{constant-initializable} if
 
 \begin{itemize}[label=\textemdash]
@@ -353,7 +352,7 @@ immediate scope is a namespace scope that follows the initializing declaration o
 \end{modification}
 
 \begin{modification}[Modification of 7.7.5/5]
-\textbf{Note to editors}: \textbf{Remove} the following lines from example
+\textbf{Note to Editors}: \textbf{Remove} the following lines from example
 \begin{verbatim}
 constexpr int l(int c) pre(c >= 2) {
   return (c % 2 == 0) ? c / 0 : c;
@@ -366,7 +365,7 @@ const int i3 = l(3); // static initialization; value of 3
 
 \end{modification}
 
-\begin{modification}[Modification to 7.7.7 Note 64]
+\begin{modification}[Modification of 7.7.7 Note 64]
 64) Testing this condition can involve a notional evaluation of its
 initializer\stdremove{, with evaluations of contract assertions using the
 ignore evaluation semantic (6.11.2)}, as described above.
