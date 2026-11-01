@@ -1,0 +1,74 @@
+\section{Modifications to Annex A}
+
+The following modifications shall be applied to Annex A (\emph{Grammar summary}
+[\texttt{gram}]):
+
+\begin{modification}[Modifications to productions in A.5]
+lambda-declarator :
+\tabto{1em}lambda-specifier-seq noexcept-specifier\textsubscript{opt}
+attribute-specifier-seq\textsubscript{opt}
+trailing-return-type\textsubscript{opt}\\
+\tabto{2em}\stdremove{function-contract-specifier-seq\textsubscript{opt}}\\
+\tabto{1em}noexcept-specifier attribute-specifier-seq\textsubscript{opt}
+trailing-return-type\textsubscript{opt}
+\stdremove{function-contract-specifier-seq\textsubscript{opt}}\\
+\tabto{1em}trailing-return-type\textsubscript{opt}
+\stdremove{function-contract-specifier-seq\textsubscript{opt}}\\
+\tabto{1em}( parameter-declaration-clause ) lambda-specifier-seq\textsubscript{opt}
+noexcept-specifier\textsubscript{opt}
+attribute-specifier-seq\textsubscript{opt}\\
+\tabto{2em}trailing-return-typeopt requires-clause\textsubscript{opt}
+\stdremove{function-contract-specifier-seq\textsubscript{opt}}\\
+\end{modification}
+
+\begin{modification}[Modifications to productions in A.6]
+statement :\\
+\tabto{1em}labeled-statement\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} expression-statement\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} compound-statement\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} selection-statement\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} iteration-statement\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} expansion-statement\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} jump-statement\\
+\tabto{1em}\stdremove{attribute-specifier-seq\textsubscript{opt}
+assertion-statement}\\
+\tabto{1em}declaration-statement\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} try-block\\
+
+\stdremove{assertion-statement :}\\
+\tabto{1em}\stdremove{\texttt{contract\_assert} attribute-specifier-seq\textsubscript{opt}
+( conditional-expression ) ;}
+\end{modification}
+
+\begin{modification}[Modifications to productions in A7]
+init-declarator :\\
+\tabto{1em}declarator initializer\\
+\tabto{1em}declarator requires-clause\textsubscript{opt}
+\stdremove{function-contract-specifier-seq\textsubscript{opt}}\\
+\ldots\\
+\stdremove{function-contract-specifier-seq :}\\
+\tabto{1em}\stdremove{function-contract-specifier function-contract-specifier-seq\textsubscript{opt}}\\
+\stdremove{function-contract-specifier :}\\
+\tabto{1em}\stdremove{precondition-specifier}\\
+\tabto{1em}\stdremove{postcondition-specifier}\\
+\stdremove{precondition-specifier :}\\
+\tabto{1em}\stdremove{pre attribute-specifier-seq\textsubscript{opt} ( conditional-expression )}\\
+\stdremove{postcondition-specifier :}\\
+\tabto{1em}\stdremove{post attribute-specifier-seq\textsubscript{opt} ( result-name-introducer\textsubscript{opt} conditional-expression )}\\
+\ldots\\
+\stdremove{function-definition :}\\
+\tabto{1em}\stdremove{attribute-specifier-seq\textsubscript{opt} decl-specifier-seq\textsubscript{opt} declarator virt-specifier-seq\textsubscript{opt}}\\
+\tabto{1em}\stdremove{function-contract-specifier-seq\textsubscript{opt} function-body}\\
+\tabto{1em}\stdremove{attribute-specifier-seq\textsubscript{opt} decl-specifier-seq\textsubscript{opt} declarator requires-clause}\\
+\tabto{1em}\stdremove{function-contract-specifier-seq\textsubscript{opt} function-body}\\
+\end{modification}
+
+\begin{modification}[Modifications to productions in A9]
+member-declarator :\\
+\tabto{1em}declarator virt-specifier-seq\textsubscript{opt}
+\stdremove{function-contract-specifier-seq\textsubscript{opt}} pure-specifier\textsubscript{opt}\\
+\tabto{1em}declarator requires-clause
+\stdremove{function-contract-specifier-seq\textsubscript{opt}}\\
+\tabto{1em}declarator brace-or-equal-initializer\\
+\tabto{1em}identifier\textsubscript{opt} attribute-specifier-seq\textsubscript{opt} : constant-expression brace-or-equal-initializer\textsubscript{opt}\\
+\end{modification}

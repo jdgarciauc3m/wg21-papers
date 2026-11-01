@@ -1,0 +1,36 @@
+\section{Modifications to Annex C}
+
+The following modifications shall be applied to Annex C (\emph{Compatibility}
+[\texttt{diff}]):
+
+\begin{modification}[Removal of to C.1.2/2]
+\stdremove{\textbf{Affected subclause}: 5.12}\\
+\stdremove{\textbf{Change}: New keywords.}\\
+\stdremove{\textbf{Rationale}: Required for new features.}\\
+
+\begin{itemize}[label=\textemdash]
+
+\item
+\stdremove{The \texttt{contract\_assert} keyword is added to introduce a
+contract assertion through an assertion-statement}
+
+\end{itemize}
+
+\stdremove{\textbf{Effect on original feature}: Valid C ++ 2023 code using
+\texttt{contract\_assert} as an identifier is not valid in
+this revision of C ++}.
+\end{modification}
+
+\begin{modification}[Modification of C.1.7]
+\textbf{Affected subclause}: 16.4.2.3\\
+\textbf{Change}: New headers.\\
+\textbf{Rationale}: New functionality.\\
+\textbf{Effect on original feature}: The following C ++ headers are new:
+\stdremove{\texttt{<contracts>} (17.10),} \texttt{<debugging>}
+(19.7.2), \texttt{<hazard\_pointer>} (32.11.3.2), \texttt{<hive>} (23.3.8),
+\texttt{<inplace\_vector>} (23.3.15), \texttt{<linalg>} (29.9.2),
+\texttt{<meta>} (21.4.1), \texttt{<rcu>} (32.11.2.2), \texttt{<simd>} (29.10.3),
+\texttt{<stdbit.h>} (22.12), \texttt{<stdckdint.h>} (29.11.1), and
+\texttt{<text\_encoding>} (28.4.1). Valid C++ 2023 code that \#includes headers with these names may be invalid
+in this revision of C ++.
+\end{modification}

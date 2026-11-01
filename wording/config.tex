@@ -1,0 +1,48 @@
+\newcommand{\paperid}{DXXXXR0}
+\newcommand{\paperdate}{2026-11-01}
+\newcommand{\papertitle}{Wording for contracts removal}
+
+\author{J. Daniel Garcia\\
+University Carlos III of Madrid\\
+HoD Spain, SC22
+}
+
+\makeatletter
+\newenvironment{modification}[1][Modification]
+{
+    \vspace{1em}
+    \noindent
+    \begin{tcolorbox}[
+      colback=white,
+      colframe=blue,
+      title={\textbf{#1}},
+      breakable,
+      grow to left by=\@totalleftmargin,
+      width=\textwidth,
+      boxrule=0.5pt
+    ]
+}
+{
+    \end{tcolorbox}
+    \vspace{1em}
+}
+\makeatother
+
+\newsavebox{\mybox}
+\newcommand{\stdremove}[1]{%
+  \sbox{\mybox}{#1}%
+  \ifdim\wd\mybox>\linewidth
+    \colorbox{red!60}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{#1}}%
+  \else
+    \colorbox{red!60}{#1}%
+  \fi
+}
+
+\newcommand{\stdadd}[1]{%
+  \sbox{\mybox}{#1}%
+  \ifdim\wd\mybox>\linewidth
+    \colorbox{green!30}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{#1}}%
+  \else
+    \colorbox{green!30}{#1}%
+  \fi
+}

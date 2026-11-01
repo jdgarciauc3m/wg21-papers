@@ -1,0 +1,443 @@
+\section{Modifications to chapter 7}
+
+The following modifications shall be applied to chapter 7 (\emph{Expressions}
+[\texttt{expr}]).
+
+\begin{modification}[Removal of 7.5.3/3]
+\stdremove{If the expression this appears within the predicate of a contract assertion (6.11.1) (including as the result of an implicit transformation (7.5.5.1) and including in the bodies of nested
+\emph{lambda-expressions}) and the
+current class encloses the contract assertion, \texttt{const} is combined with
+the \emph{cv-qualifier-seq} used to generate the
+resulting type (see below).}
+\end{modification}
+
+\begin{modification}[Modification of 7.5.5.1/2]
+If an \emph{id-expression} E denotes a non-static non-type member of some class
+\texttt{C} at a point where the current
+class (7.5.3) is \texttt{X} and
+
+\begin{itemize}[label=\textemdash]
+
+\item
+\emph{E} is potentially evaluated or \texttt{C} is \texttt{X} or a base class of
+\texttt{X}, and
+
+\item
+\emph{E} is not the \emph{id-expression} of a class member access expression (7.6.1.5), and
+
+\item
+\emph{E} is not the \emph{id-expression} of a \emph{reflect-expression} (7.6.2.10), and
+
+\item
+if \emph{E} is a \emph{qualified-id}, \emph{E} is not the un-parenthesized
+operand of the unary \texttt{\&} operator (7.6.2.2),
+
+\end{itemize}
+
+the \emph{id-expression} is transformed into a class member access expression
+using \texttt{(*this)} as the object expression.
+\stdremove{If this transformation occurs in the predicate of a precondition
+assertion of a constructor of \texttt{X} or a} \stdremove{postcondition
+assertion of a destructor of \texttt{X}, the expression is ill-formed.}
+\newline
+\ldots\\
+\textbf{Note to editors}: Example 1 should be \textbf{completely removed}.
+\end{modification}
+
+\begin{modification}[Removal of 7.5.5.2/7]
+\stdremove{Otherwise, if the \emph{unqualified-id} appears in the predicate of a contract
+assertion \emph{C} (6.11) and the entity is}
+
+\begin{itemize}[label=\textemdash]
+\item
+\stdremove{a variable declared outside of \emph{C} of object type \texttt{T},}
+
+\item
+\stdremove{a variable or template parameter declared outside of \emph{C} of type “reference
+to \texttt{T}”, or}
+
+\item
+\stdremove{a structured binding of type \texttt{T} whose corresponding variable is declared
+outside of \emph{C},
+then the type of the expression is \texttt{const T}.}
+\end{itemize}
+\end{modification}
+
+\begin{modification}[Removal of 7.5.5.2/8]
+\textbf{Note to editors}: In Example 2 all uses of \texttt{pre} and
+\texttt{post} shall be
+\textbf{completely removed}.
+\end{modification}
+
+\begin{modification}[Removal of 7.5.2.2/13]
+\stdremove{If an \emph{id-expression E} appears in the predicate of a function contract
+assertion attached to a function \emph{f} and
+denotes a function parameter of \emph{f} and the implementation introduces any temporary objects to hold the
+value of that parameter as specified in 6.8.7,}
+
+\begin{itemize}[label=\textemdash]
+\item
+\stdremove{if the contract assertion is a precondition assertion and the evaluation of the precondition assertion is
+sequenced before the initialization of the parameter object, \emph{E} refers to the most recently initialized
+such temporary object, and}
+
+\item
+\stdremove{if the contract assertion is a postcondition assertion, it is unspecified
+whether \emph{E} refers to one of the
+temporary objects or the parameter object; the choice is consistent within a single evaluation of a
+postcondition assertion.}
+\end{itemize}
+
+\end{modification}
+
+\begin{modification}[Removal of 7.5.2.2/14]
+\stdremove{If an id-expression \emph{E} names a result binding in a postcondition assertion and the implementation introduces
+any temporary objects to hold the result object as specified in 6.8.7, and the postcondition assertion is
+sequenced before the initialization of the result object (7.6.1.3), \emph{E} refers to the most recently initialized such
+temporary object.}
+\end{modification}
+
+\begin{modification}[Modification to 7.5.5.1/2]
+If an id-expression \emph{E} denotes a non-static non-type member of some class
+\emph{C} at a point where the current class (7.5.3) is \emph{X} and
+
+\begin{itemize}[label=\textemdash]
+
+\item
+\emph{E} is potentially evaluated or \emph{C} is \emph{X} or a base class of
+\emph{X}, and
+
+\item
+\emph{E} is not the \emph{id-expression} of a class member access expression (7.6.1.5), and
+
+\item
+\emph{E} is not the \emph{id-expression} of a \emph{reflect-expression} (7.6.2.10), and
+
+\item
+if \emph{E} is a \emph{qualified-id}, \emph{E} is not the un-parenthesized operand of
+the unary \& operator (7.6.2.2),
+
+\end{itemize}
+
+the \emph{id-expression} is transformed into a class member access expression
+using (\texttt{*this}) as the object expression.
+
+\stdremove{If this transformation occurs in the predicate of a precondition assertion of a constructor of X or a postcondition assertion of a destructor of X, the expression is ill-formed.}
+\newline
+
+NOTE 2 If C is not X or a base class of X, the class member access expression is ill-formed. Also, if the id-expression occurs within a static or explicit object member function, the class member access is ill-formed.
+\newline
+
+This transformation does not apply in the template definition context (13.8.3.2).
+\newline
+
+\stdremove{EXAMPLE 1} shall be \textbf{completely removed}.
+\end{modification}
+
+\begin{modification}[Removal of 7.5.5.2/7]
+\stdremove{Otherwise, if the \emph{unqualified-id} appears in the predicate of a contract 
+assertion \emph{C} (6.11) and the entity is}
+
+\begin{itemize}[label=\textemdash]
+
+\item
+\stdremove{a variable declared outside of \emph{C} of object type \texttt{T},}
+
+\item
+\stdremove{a variable or template parameter declared outside of \emph{C} of type
+“reference to \texttt{T}”, or}
+
+\item
+\stdremove{a structured binding of type \texttt{T} whose corresponding variable is
+declared outside of \emph{C},}
+
+\end{itemize}
+
+\stdremove{then the type of the expression is \texttt{const T}}.
+
+\end{modification}
+
+\begin{modification}[Removal of 7.5.5.2/13]
+\stdremove{If an \emph{id-expression E} appears in the predicate of a function contract 
+assertion attached to a function \emph{f} and
+denotes a function parameter of \emph{f} and the implementation introduces any temporary objects to hold the
+value of that parameter as specified in 6.8.7,}
+
+\begin{itemize}[label=\textemdash]
+
+\item
+\stdremove{if the contract assertion is a precondition assertion and the evaluation of the precondition assertion is
+sequenced before the initialization of the parameter object, \emph{E} refers to the most recently initialized
+such temporary object, and}
+
+\item
+\stdremove{if the contract assertion is a postcondition assertion, it is
+unspecified whether \emph{E} refers to one of the
+temporary objects or the parameter object; the choice is consistent within a single evaluation of a
+postcondition assertion.}
+
+\end{itemize}
+
+\end{modification}
+
+\begin{modification}[Removal of 7.5.5.2/14]
+\stdremove{If an \emph{id-expression E} names a result binding in a postcondition assertion and the implementation introduces
+any temporary objects to hold the result object as specified in 6.8.7, and the postcondition assertion is
+sequenced before the initialization of the result object (7.6.1.3), \emph{E} refers to the most recently initialized such
+temporary object.}
+\end{modification}
+
+
+
+\begin{modification}[Removal of 7.5.5.3/7]
+\stdremove{If \emph{Q} appears in the predicate of a contract assertion \emph{C}
+(6.11) and the entity is}
+
+\begin{itemize}[label=\textemdash]
+\item
+\stdremove{a variable declared outside of \emph{C} of object type \texttt{T},}
+
+\item
+\stdremove{a variable declared outside of \emph{C} of type “reference to \texttt{T}”, or}
+
+\item
+\stdremove{a structured binding of type \texttt{T} whose corresponding variable is declared
+outside of \emph{C},}
+
+\end{itemize}
+
+\stdremove{then the type of the expression is \texttt{const T}.}
+\end{modification}
+
+\begin{modification}[Modification to 7.5.6.1]
+lambda-expression :\\
+\tabto{1em}lambda-introducer attribute-specifier-seq\textsubscript{opt} lambda-declarator
+compound-statement\\
+\tabto{1em}lambda-introducer \textless template-parameter-list \textgreater
+requires-clause\textsubscript{opt} attribute-specifier-seq\textsubscript{opt}\\
+\tabto{1em}lambda-declarator compound-statement\\
+
+lambda-introducer :\\
+\tabto{1em}[ lambda-capture\textsubscript{opt} ]\\
+
+lambda-declarator :
+\tabto{1em}lambda-specifier-seq noexcept-specifier\textsubscript{opt}
+attribute-specifier-seq\textsubscript{opt}
+trailing-return-type\textsubscript{opt}\\
+\tabto{2em}\stdremove{function-contract-specifier-seq\textsubscript{opt}}\\
+\tabto{1em}noexcept-specifier attribute-specifier-seq\textsubscript{opt}
+trailing-return-type\textsubscript{opt}
+\stdremove{function-contract-specifier-seq\textsubscript{opt}}\\
+\tabto{1em}trailing-return-type\textsubscript{opt}
+\stdremove{function-contract-specifier-seq\textsubscript{opt}}\\
+\tabto{1em}( parameter-declaration-clause ) lambda-specifier-seq\textsubscript{opt}
+noexcept-specifier\textsubscript{opt}
+attribute-specifier-seq\textsubscript{opt}\\
+\tabto{2em}trailing-return-typeopt requires-clause\textsubscript{opt}
+\stdremove{function-contract-specifier-seq\textsubscript{opt}}\\
+
+lambda-specifier :
+\tabto{1em}\texttt{consteval}\\
+\tabto{1em}\texttt{constexpr}\\
+\tabto{1em}\texttt{mutable}\\
+\tabto{1em}\texttt{static}\\
+
+lambda-specifier-seq :\\
+\tabto{1em}lambda-specifier lambda-specifier-seq\textsubscript{opt}
+\end{modification}
+
+\begin{modification}[Modification to 7.5.6.2/7]
+The function call operator or operator template is a static member function or static member function
+template (11.4.9.2) if the \emph{lambda-expression}’s
+\emph{parameter-declaration-clause} is followed by static. Otherwise,
+it is a non-static member function or member function template (11.4.3) that is declared const (11.4.3) if
+and only if the \emph{lambda-expression}’s \emph{parameter-declaration-clause}
+is not followed by \texttt{mutable} and the lambda-
+declarator does not contain an explicit object parameter. It is neither virtual nor declared volatile.
+Any \emph{noexcept-specifier} \stdremove{or \emph{function-contract-specifier}
+(9.4.1)} specified on a \emph{lambda-expression} applies to the
+corresponding function call operator or operator template. An
+\emph{attribute-specifier-seq} in a \emph{lambda-declarator}
+appertains to the type of the corresponding function call operator or operator
+template. An \emph{attribute-specifier-seq} in a \emph{lambda-expression}
+preceding a \emph{lambda-declarator} appertains to the corresponding function
+call operator or operator template. The function call operator or any given operator template specialization
+is a \texttt{constexpr} function if either the corresponding
+\emph{lambda-expression}’s \emph{parameter-declaration-clause} is followed
+by \texttt{constexpr} or \texttt{consteval}, or it is \emph{constexpr-suitable} (9.2.6). It is an immediate function (9.2.6) if the
+corresponding \emph{lambda-expression}’s \emph{parameter-declaration-clause} is
+followed by \texttt{consteval}.
+\end{modification}
+
+\begin{modification}[Removal of 7.5.6.2/10]
+\stdremove{If all potential references to a local entity implicitly captured by
+a \emph{lambda-expression L} occur within the function
+contract assertions (9.4.1) of the call operator or operator template of
+\emph{L} or within \emph{assertion-statements} (8.9)
+within the body of \emph{L}, the program is ill-formed.}
+\newline
+
+\stdremove{NOTE: 4 Adding a contract assertion to an existing C ++ program
+cannot cause additional captures.}
+\newline
+
+\textbf{Edition Note}: This modification also completely \textbf{removes the
+corresponding code example}.
+\end{modification}
+
+\begin{modification}[Modification to 7.5.6.3/3]
+A lambda-expression shall not have a \emph{capture-default} or
+\emph{simple-capture} in its \emph{lambda-introducer} unless
+
+\begin{itemize}[label=\textemdash]
+
+\item
+its innermost enclosing scope is a block scope (6.4.3),
+
+\item
+it appears within a default member initializer and its innermost enclosing scope is the corresponding
+class scope (6.4.7), or
+
+\item
+\stdremove{it appears within a contract assertion and its innermost enclosing scope is the corresponding contract-
+assertion scope (6.4.10).}
+
+\end{itemize}
+
+\end{modification}
+
+\begin{modification}[Modification to 7.5.9/2.5]
+Otherwise, if \emph{S} is a variable or a structured binding, \emph{S} shall either have static or thread storage duration
+or shall inhabit a scope enclosing the expression. The expression \emph{E} is an lvalue referring to the object
+or function \emph{X} associated with or referenced by \emph{S}, and is a
+bit-field if and only if \emph{X} is a bit-field. \stdremove{If \emph{E}
+appears in the predicate of a contract assertion \emph{C} (6.11) and \emph{S}
+is}
+
+\begin{itemize}[label=\textemdash]
+
+\item
+\stdremove{a variable declared outside of \emph{C} of object type \texttt{T},}
+
+\item
+\stdremove{a variable declared outside of \emph{C} of type “reference to \texttt{T}”, or}
+
+\item
+\stdremove{a structured binding of type \texttt{T} whose corresponding variable is declared
+outside of \emph{C},}
+\end{itemize}
+
+\stdremove{then the type of \emph{E} is \texttt{const T}, otherwise \emph{E} has
+the same type as that of \emph{S}}.
+\newline
+
+NOTE: 2 The type of a \emph{splice-expression} designating a variable or structured binding of reference type will be
+adjusted to a non-reference type (7.2.2).
+
+\end{modification}
+
+\begin{modification}[Modification of 7.6.1.3/6]
+When a function is called, each parameter (9.3.4.6) is initialized (9.5, 11.4.5.3) with its corresponding
+argument\stdremove{, and each precondition assertion of the function is
+evaluated (9.4.1)}. If the function is an explicit
+object member function and there is an implied object argument (12.2.2.2.2), the list of provided arguments is
+preceded by the implied object argument for the purposes of this correspondence. If there is no corresponding
+argument, the default argument for the parameter is used.\\
+\ldots
+\end{modification}
+
+\begin{modification}[Modification of 7.6.1.3/7]
+The \emph{postfix-expression} is sequenced before each expression in the
+\emph{expression-list} and any default argument.
+The initialization of a parameter or, if the implementation introduces any temporary objects to hold the
+values of function parameters (6.8.7), the initialization of those temporaries, including every associated value
+computation and side effect, is indeterminately sequenced with respect to that of any other parameter. 
+\stdremove{These evaluations are sequenced before the evaluation of the precondition assertions of the function, which are
+evaluated in sequence (9.4.1). For any temporaries introduced to hold the values of function parameters, the
+initialization of the parameter objects from those temporaries is indeterminately sequenced with respect to
+the evaluation of each precondition assertion.}
+\end{modification}
+
+\begin{modification}[Removal of 7.6.1.3/9]
+\stdremove{When the called function exits normally (8.8.4, 7.6.2.4), all postcondition assertions of the function are
+evaluated in sequence (9.4.1). If the implementation introduces any temporary objects to hold the result
+value as specified in 6.8.7, the evaluation of each postcondition assertion is indeterminately sequenced with
+respect to the initialization of any of those temporaries or the result object. These evaluations, in turn, are
+sequenced before the destruction of any function parameters.}
+\end{modification}
+\begin{modification}[Modification to 7.6.2.4/2]
+An \emph{await-expression} shall appear only as a potentially evaluated
+expression within the \emph{compound-statement} of
+a \emph{function-body} or \emph{lambda-expression}, in either case outside of a
+handler (14.1). In a \emph{declaration-statement} or in
+the \emph{simple-declaration} (if any) of an \emph{init-statement}, an
+\emph{await-expression} shall appear only in an initializer of that
+\emph{declaration-statement} or \emph{simple-declaration}. An
+\emph{await-expression} shall not appear in a default argument (9.3.4.7).
+An \emph{await-expression} shall not appear in the initializer of a block variable with static or thread storage
+duration. \stdremove{An \emph{await-expression} shall not be a potentially-evaluated subexpression 
+of the predicate of a contract
+assertion (6.11).} A context within a function where an \emph{await-expression} can appear is called a suspension
+context of the function.
+\end{modification}
+
+\begin{modification}[Modification to 7.7.4]
+A variable \texttt{v} is \emph{constant-initializable} if
+
+\begin{itemize}[label=\textemdash]
+\item
+the \emph{full-expression} of its initialization is a constant expression when
+interpreted as a \emph{constant-expression}
+\stdremove{with all contract assertions using the ignore evaluation semantic (6.11.2),}
+\newline
+
+NOTE 1 In the course of this determination,
+\texttt{std::is\_constant\_evaluated()} (21.3.11) has the value \texttt{true}.
+\newline
+
+\stdremove{NOTE 2 Furthermore, if the initialization is manifestly
+\emph{constant-evaluated}, its evaluation during translation can still evaluate contract assertions with other evaluation semantics, resulting in a diagnostic or ill-formed program if a contract violation occurs.}
+
+\item
+immediately after the initializing declaration of \texttt{v}, the object or
+reference \texttt{x} declared by \texttt{v} is \emph{constexpr-representable}, and
+
+\item
+if \texttt{x} has static or thread storage duration, \texttt{x} is
+\emph{constexpr-representable} at the nearest point whose
+immediate scope is a namespace scope that follows the initializing declaration of v.
+
+\end{itemize}
+
+\end{modification}
+
+\begin{modification}[Modification of 7.7.5/5]
+\textbf{Change the following lines}:
+\begin{verbatim}
+constexpr int l(int c) pre(c >= 2) {
+  return (c % 2 == 0) ? c / 0 : c;
+}
+const int i0 = l(0); // dynamic initialization; contract violation or undefined behavior
+const int i1 = l(1); // static initialization; value of 1 or contract violation at compile time
+const int i2 = l(2); // dynamic initialization; undefined behavior
+const int i3 = l(3); // static initialization; value of 3
+\end{verbatim}
+
+\textbf{by these other lines}:
+
+\begin{verbatim}
+constexpr int l(int c) {
+  return (c % 2 == 0) ? c / 0 : c;
+}
+const int i0 = l(0); // dynamic initialization; undefined behavior
+const int i1 = l(1); // static initialization; value of 1 
+const int i2 = l(2); // dynamic initialization; undefined behavior
+const int i3 = l(3); // static initialization; value of 3
+\end{verbatim}
+\end{modification}
+
+\begin{modification}[Modification to 7.7.7 Note 64]
+64) Testing this condition can involve a notional evaluation of its
+initializer\stdremove{, with evaluations of contract assertions using the
+ignore evaluation semantic (6.11.2)}, as described above.
+\end{modification}

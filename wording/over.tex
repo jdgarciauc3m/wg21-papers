@@ -1,0 +1,57 @@
+\section{Modifications to chapter 12}
+
+The following modifications shall be applied to chapter 12 (\emph{Overloading}
+[\texttt{over}]): 
+
+\begin{modification}[Modification of 12.2.2.2.2/3]
+In unqualified function calls, the function is designated by an
+\emph{id-expression} or
+a \emph{splice-expression} \emph{E}. The set of candidate functions either is the set found by
+name lookup (6.5) if \emph{E} is an \emph{id-expression} or is the set determined as specified
+in 7.5.9 if \emph{E} is a \emph{splice-expression}. The set of candidate functions consists
+either entirely of non-member functions or entirely of member functions of some
+class \texttt{T}. In the former case or if \emph{E} is either a splice-expression or the address
+of an overload set, the argument list is the same as the \emph{expression-list} in the
+call. Otherwise, the argument list is the \emph{expression-list} in the call augmented
+by the addition of an implied object argument as in a qualified function call.
+If the current class is, or is derived from, \texttt{T}, and the keyword
+\texttt{this} (7.5.3)
+refers to it, \stdadd{the implied object argument is \texttt{(*this)}}.
+
+\begin{itemize}[label=\textemdash]
+
+\item
+\stdremove{if the unqualified function call appears in a precondition assertion of a constructor or a postcondition
+assertion of a destructor and overload resolution selects a non-static member function, the call is
+ill-formed;}
+
+\item
+\stdremove{otherwise, the implied object argument is \texttt{(*this)}.}
+
+\end{itemize}
+
+Otherwise,
+
+\begin{itemize}[label=\textemdash]
+
+\item 
+if overload resolution selects a non-static member function, the call is ill-formed;
+
+\item
+otherwise, a contrived object of type \texttt{T} becomes the implied object argument.
+
+\end{itemize}
+
+In the corresponding example \stdremove{remove the following lines}:
+\begin{verbatim}
+C()
+  pre(a())          // error: implied this in constructor precondition
+  pre(this->a())    // OK
+  post(a());        // OK
+~C()                
+  pre(a())          // OK
+  post(a())         // error: implied this in destructor postcondition
+  post(this->a());  // OK
+\end{verbatim}
+
+\end{modification}

@@ -1,0 +1,47 @@
+%----------------------------------------------------------
+% Document class
+%
+\documentclass[10pt,a4paper,oneside,final,notitlepage]{article}%
+
+%Geometry
+\usepackage[a4paper,margin=2cm]{geometry}
+
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.9}
+
+\usepackage{url}
+\usepackage[citecolor=blue,linkcolor=blue,urlcolor=blue,colorlinks=true]{hyperref}
+
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{tabto}
+
+\begin{document}
+
+\input{config}
+
+\noindent
+\textbf{Document Number}: \texttt{\paperid}\\
+\textbf{Date}: \paperdate\\
+\textbf{Reply to}: J. Daniel Garcia\\ 
+\textbf{e-mail}: \url{jdgarcia@inf.uc3m.es}\\
+\textbf{Audience}: All\\
+
+\title{\papertitle}
+\date{}
+
+\begingroup
+\let\newpage\relax% Void the actions of \newpage
+\maketitle
+\endgroup
+
+\input{contents}
+
+\bibliographystyle{unsrt}
+\bibliography{ref}
+
+\end{document}

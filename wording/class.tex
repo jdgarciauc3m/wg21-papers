@@ -1,0 +1,94 @@
+\section{Modifications to chapter 11}
+
+The following modifications shall be applied to chapter 11 (\emph{Classes}
+[\texttt{class}]):
+
+\begin{modification}[Modifications to 11.4.1 grammar rules]
+Modify the following grammar production:\\
+
+member-declarator :
+\tabto{1em}declarator virt-specifier-seq\textsubscript{opt}
+\stdremove{function-contract-specifier-seq\textsubscript{opt}} pure-specifier\textsubscript{opt}\\\
+\tabto{1em}declarator requires-clause
+\stdremove{function-contract-specifier-seq\textsubscript{opt}}\\\
+\tabto{1em}declarator brace-or-equal-initializer\\\
+\tabto{1em}identifier\textsubscript{opt} attribute-specifier-seq\textsubscript{opt} : constant-expression brace-or-equal-initializer\textsubscript{opt}\\
+\end{modification}
+
+\begin{modification}[Removal of 11.4.1/2]
+\stdremove{The optional \emph{function-contract-specifier-seq} (9.4.1) in a
+\emph{member-declarator} shall be present only if the declarator
+declares a function.}
+\end{modification}
+
+\begin{modification}[Modification of 11.4.1/10]
+A \emph{complete-class} context of a class (template) is a
+
+\begin{itemize}[label=\textemdash]
+
+\item
+function body (9.6.1),
+
+\item
+default argument (9.3.4.7),
+
+\item
+default template argument (13.2),
+
+\item
+\emph{noexcept-specifier} (14.5),
+
+\item
+\stdremove{\emph{function-contract-specifier} (9.4.1), or}
+
+\item
+default member initializer
+within the \emph{member-specification} of the class or class template.
+\end{itemize}
+
+NOTE 4 A \emph{complete-class} context of a nested class is also a
+\emph{complete-class} context of any enclosing class, if the nested
+class is defined within the \emph{member-specification} of the enclosing class.
+\end{modification}
+
+\begin{modification}[Modification to 11.9.3/16]
+Member functions (including virtual member functions, 11.7.3) can be called for an object under construction
+or destruction. Similarly, an object under construction or destruction can be
+the operand of the \texttt{typeid}
+operator (7.6.1.8) or of a \texttt{dynamic\_cast} (7.6.1.7). However, if these operations are performed during
+evaluation of
+
+\begin{itemize}[label=\textemdash]
+
+\item
+a \emph{ctor-initializer} (or in a function called directly or indirectly from a
+\emph{ctor-initializer}) before all the
+\emph{mem-initializers} for base classes have completed,
+
+\item
+\stdremove{a precondition assertion of a constructor, or}
+
+\item
+\stdremove{a postcondition assertion of a destructor (9.4.1),}
+
+\end{itemize}
+
+the program has undefined behavior.
+\end{modification}
+
+\begin{modification}[Modification of 11.9.5/4]
+Member functions, including virtual functions (11.7.3), can be called during
+construction or destruction (11.9.3).  When a virtual function is called
+directly or indirectly from a constructor or from a destructor, including during
+the construction or destruction of the class’s non-static data
+members\stdremove{, or\
+during the evaluation of a postcondition assertion of a constructor or a
+precondition assertion} \stdremove{of a destructor (9.4.1)}, and the object to which the call
+applies is the object (call it x) under construction or destruction, the
+function called is the final overrider in the constructor’s or destructor’s
+class and not one overriding it in a more-derived class.  If the virtual
+function call uses an explicit class member access (7.6.1.5) and the object
+expression refers to the complete object of x or one of that object’s base class
+subobjects but not x or one of its base class subobjects, the behavior is
+undefined.
+\end{modification}

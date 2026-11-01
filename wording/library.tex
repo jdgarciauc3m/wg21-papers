@@ -1,0 +1,117 @@
+\section{Modifications to chapter 16}
+
+The following modifications shall be applied to chapter 16 (\emph{Library
+introduction} [\texttt{library}]):
+
+\begin{modification}[Modification of 16.3.2.4/3.4]
+\begin{itemize}[label=\textemdash]
+
+\item
+\emph{Preconditions}: conditions that the function assumes to hold whenever it is called; violation of any
+preconditions results in undefined behavior.
+\newline
+
+\stdremove{EXAMPLE 3 An implementation can express some such conditions via the 
+use of a contract assertion, such as a precondition assertion (9.4.1).}
+\end{itemize}
+\end{modification}
+
+\begin{modification}[Modification of 16.3.2.4/3.5]
+
+\begin{itemize}[label=\textemdash]
+
+\item
+\emph{Hardened preconditions}: conditions that the function assumes to hold whenever it is called.
+
+\begin{itemize}[label=\textemdash]
+
+\item
+When invoking the function in a hardened implementation, prior to any other observable side
+effects of the function, \stdremove{contract assertions whose predicates are as described in the hardened
+precondition are evaluated with a terminating semantic (6.11.2).}
+\stdadd{preconditions are evaluated and if any of them is violated the program
+terminates in an implementation defined manner.}
+
+\item
+When invoking the function in a non-hardened implementation, if any hardened precondition is
+violated, the program has undefined behavior.
+
+\end{itemize}
+
+\end{itemize}
+
+\end{modification}
+
+\begin{modification}[Modification of 16.3.2.4/3.8]
+
+\begin{itemize}[label=\textemdash]
+\item
+\emph{Postconditions}: the conditions (sometimes termed observable results) established by the function.
+\newline
+
+\stdremove{EXAMPLE 4 An implementation can express some such conditions via the use of 
+a contract assertion, such as a postcondition assertion (9.4.1).}
+\end{itemize}
+
+\end{modification}
+
+\begin{modification}[Modification of Table 24]
+Remove the following header:
+
+\begin{itemize}
+  \item \stdremove{\texttt{<contracst>}}
+\end{itemize}
+
+\end{modification}
+
+\begin{modification}[Modification of Table 27]
+Remove the following line from the table:
+
+\begin{itemize}
+  \item \stdremove{17.10\qquad Contract-violation
+handling\qquad\texttt{<contracts>}}
+\end{itemize}
+
+\end{modification}
+
+\begin{modification}[Modification 16.4.6.1/2]
+An implementation’s use of
+
+\begin{itemize}[label=\textemdash]
+
+\item
+headers is discussed in 16.4.6.2,
+
+\item
+macros in 16.4.6.3,
+
+\item
+non-member functions in 16.4.6.4,
+
+\item
+member functions in 16.4.6.5,
+
+\item
+data race avoidance in 16.4.6.10,
+
+\item
+access specifiers in 16.4.6.12,
+
+\item
+class derivation in 16.4.6.13,
+
+\item
+exceptions in 16.4.6.14, and
+
+\item
+\stdremove{contract assertions in 16.4.6.15.}
+
+\end{itemize}
+
+\end{modification}
+
+\begin{modification}[Removal of section 16.4.6.15]
+\stdremove{Unless specified otherwise, an implementation may check the specified 
+preconditions and postconditions of a function in the C ++ standard library using 
+contract assertions (6.11, 16.3.2.4).}
+\end{modification}

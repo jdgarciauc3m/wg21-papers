@@ -1,0 +1,64 @@
+\section{Modifications to chapter 4}
+
+The following modifications shall be applied to chapter 4 (\emph{General
+principles} [\texttt{intro}]):
+
+\begin{modification}[Modification to 4.1.1/2.3.4]
+\begin{itemize}[label=\textemdash]
+
+\item
+Otherwise, if a program contains
+
+\begin{itemize}[label=\textemdash]
+
+\item
+a violation of any diagnosable rule,
+
+\item
+a preprocessing translation unit with a \emph{\#warning} preprocessing directive (15.9),
+
+\item
+an occurrence of a construct described in this document as “conditionally-supported” when the
+implementation does not support that construct, or
+
+\item
+\stdremove{a contract assertion (6.11.2) evaluated with a checking
+semantic in a manifestly constant-evaluated context (7.7.7) resulting in a
+contract violation,}
+\end{itemize}
+\end{itemize}
+
+\end{modification}
+
+\begin{modification}[Modification to 4.1.1/2.4]
+Furthermore, a conforming implementation shall not accept
+
+\begin{itemize}[label=\textemdash]
+
+\item
+a preprocessing translation unit containing a \emph{\#error} preprocessing directive (15.9),
+
+\item a translation unit with a \emph{static\_assert-declaration} that fails (9.1), or
+
+\item
+\stdremove{a contract assertion evaluated with a terminating semantic (6.11.2) in a manifestly constant-evaluated
+context (7.7.7) resulting in a contract violation.}
+
+\end{itemize}
+\end{modification}
+
+\begin{modification}[Modification to 4.1.1/8]
+It is implementation-defined whether the implementation is a hardened implementation. If it is a hardened
+implementation, violating a hardened precondition results in \stdremove{a
+contract violation (16.3.2.4)}\stdadd{termination in an implementation defined
+manner}.
+\end{modification}
+
+\begin{modification}[Modification to 4.1.2/5]
+Certain events in the execution of a program are termed observable checkpoints.
+\newline
+
+NOTE 1 A call to \texttt{std::observable\_checkpoint} (22.2.9) is an observable
+checkpoint \stdremove{, as are certain parts of the
+evaluation of contract assertions (6.11)}.
+\end{modification}
