@@ -31,6 +31,24 @@ name lookup and instantiation, the \emph{compound-statement} of an
 \emph{expansion-statement} is considered a template definition.
 \end{modification}
 
+\begin{modification}[Modification of 13.8.3.3/3]
+An \emph{id-expression} is type-dependent if it is a \emph{template-id} that is
+not a \emph{concept-id} and is dependent; or if its
+terminal name is
+
+\begin{itemize}[label=\textemdash]
+
+\item \ldots
+
+\item
+\stdremove{associated by name lookup with a result binding (9.4.2) of a function whose
+return type is dependent,}
+\item \ldots
+
+\end{itemize}
+
+\end{modification}
+
 \begin{modification}[Modification of 13.9.4/12]
 Whether an explicit specialization of a function or variable template is inline,
 constexpr, constinit, or consteval is determined by the explicit specialization

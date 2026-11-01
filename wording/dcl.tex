@@ -3,6 +3,13 @@
 The following modifications shall be applied to chapter 9 (\emph{Declarations}
 [\texttt{dcl}]):
 
+\begin{modification}[Removal of 9.2.9.7.1/14]
+\stdremove{A result binding never has an undeduced placeholder type (9.4.2).}
+\newline
+
+\textbf{Note to editors}: Also \textbf{remove completely} example 5.
+\end{modification}
+
 \begin{modification}[Modification to 9.3.1/1]
  A declarator declares a single variable, function, or type, within a
 declaration. The \emph{init-declarator-list} appearing in a
@@ -64,3 +71,10 @@ names, \stdremove{contract assertions,} blocks, or translation units.\\
 \ldots
 \end{modification}
 
+\begin{modification}[Modification of 9.13.8/2]
+The attribute may be applied to the declaration of a class, type alias, 
+variable (including a structured binding
+declaration), structured binding, \stdremove{result binding (9.4.2),} 
+non-static data member, function, enumeration, or
+enumerator, or to an identifier label (8.2).
+\end{modification}

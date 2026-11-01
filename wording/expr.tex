@@ -44,6 +44,23 @@ assertion of a destructor of \texttt{X}, the expression is ill-formed.}
 \textbf{Note to editors}: Example 1 should be \textbf{completely removed}.
 \end{modification}
 
+\begin{modification}[Removal of 7.5.5.2/6]
+\stdremove{Otherwise, if the \emph{unqualified-id} names a result binding
+(9.4.2) attached to a function with return type \texttt{U},}
+
+\begin{itemize}[label=\textemdash]
+
+\item
+\stdremove{if \texttt{U} is “reference to \texttt{T}”, then the type of the
+expression is \texttt{const T};}
+
+\item
+\stdremove{otherwise, the type of the expression is \texttt{const U}.}
+
+\end{itemize}
+
+\end{modification}
+
 \begin{modification}[Removal of 7.5.5.2/7]
 \stdremove{Otherwise, if the \emph{unqualified-id} appears in the predicate of a contract
 assertion \emph{C} (6.11) and the entity is}
@@ -67,6 +84,13 @@ then the type of the expression is \texttt{const T}.}
 \textbf{Note to editors}: In Example 2 all uses of \texttt{pre} and
 \texttt{post} shall be
 \textbf{completely removed}.
+\end{modification}
+
+\begin{modification}[Modification of 7.5.5.2/12]
+The expression is an xvalue if it is move-eligible (see below); an lvalue if the entity is a function, variable,
+structured binding (9.7), \stdremove{result binding (9.4.2),} data member, 
+or template parameter object; and a prvalue
+otherwise (7.2.1); it is a bit-field if the identifier designates a bit-field.
 \end{modification}
 
 \begin{modification}[Removal of 7.5.2.2/13]
