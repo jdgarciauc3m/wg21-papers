@@ -3,6 +3,24 @@
 The following modifications shall be applied to chapter 8 (\emph{Statements}
 [\texttt{stmt}]:
 
+\begin{modification}[Modification of 8.1/1]
+Except as indicated, statements are executed in sequence (6.10.1).
+\newline
+statement :\\
+\tabto{1em}labeled-statement\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} expression-statement\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} compound-statement\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} selection-statement\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} iteration-statement\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} expansion-statement\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} jump-statement\\
+\tabto{1em}\stdremove{attribute-specifier-seq\textsubscript{opt}
+assertion-statement}\\
+\tabto{1em}declaration-statement\\
+\tabto{1em}attribute-specifier-seq\textsubscript{opt} try-block\\
+
+\end{modification}
+
 \begin{modification}[Modification of 8.8.4/5 Note 3]
 NOTE 3 These operations are sequenced before the destruction of local variables in each remaining enclosing block of
 the function (8.10), \stdremove{which, in turn, is sequenced before the
