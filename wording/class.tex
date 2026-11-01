@@ -64,7 +64,8 @@ operator (7.6.1.8) or of a \texttt{dynamic\_cast} (7.6.1.7). However, if these o
 evaluation of
 \stdadd{a \emph{ctor-initializer} (or in a function called directly or indirectly from a
 \emph{ctor-initializer}) before all the
-\emph{mem-initializers} for base classes have completed,}
+\emph{mem-initializers} for base classes have completed, the program has
+undefined behavior.}
 
 \begin{itemize}[label=\textemdash]
 
@@ -82,7 +83,7 @@ a \emph{ctor-initializer} (or in a function called directly or indirectly from a
 
 \end{itemize}
 
-the program has undefined behavior.
+\stdremove{the program has undefined behavior.}
 \end{modification}
 
 \begin{modification}[Modification of 11.9.5/4]
