@@ -36,7 +36,7 @@ default argument (9.3.4.7),
 default template argument (13.2),
 
 \item
-\emph{noexcept-specifier} (14.5),
+\emph{noexcept-specifier} (14.5), \stdadd{or}
 
 \item
 \stdremove{\emph{function-contract-specifier} (9.4.1), or}
@@ -62,13 +62,17 @@ or destruction. Similarly, an object under construction or destruction can be
 the operand of the \texttt{typeid}
 operator (7.6.1.8) or of a \texttt{dynamic\_cast} (7.6.1.7). However, if these operations are performed during
 evaluation of
+\stdadd{a \emph{ctor-initializer} (or in a function called directly or indirectly from a
+\emph{ctor-initializer}) before all the
+\emph{mem-initializers} for base classes have completed.} 
 
 \begin{itemize}[label=\textemdash]
 
 \item
+\stdremove{
 a \emph{ctor-initializer} (or in a function called directly or indirectly from a
 \emph{ctor-initializer}) before all the
-\emph{mem-initializers} for base classes have completed,
+\emph{mem-initializers} for base classes have completed,} 
 
 \item
 \stdremove{a precondition assertion of a constructor, or}
