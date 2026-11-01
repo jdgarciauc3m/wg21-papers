@@ -29,8 +29,8 @@ use of a contract assertion, such as a precondition assertion (9.4.1).}
 When invoking the function in a hardened implementation, prior to any other observable side
 effects of the function, \stdremove{contract assertions whose predicates are as described in the hardened
 precondition are evaluated with a terminating semantic (6.11.2).}
-\stdadd{preconditions are evaluated and if any of them is violated the program
-terminates in an implementation defined manner.}
+\stdadd{the hardened preconditions are evaluated. If any hardened precondition
+is violated, the program terminates in an implementation-defined manner.}
 
 \item
 When invoking the function in a non-hardened implementation, if any hardened precondition is
