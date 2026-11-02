@@ -42,10 +42,11 @@ NOTE 2 If C is not X or a base class of X, the class member access expression is
 \newline
 
 This transformation does not apply in the template definition context (13.8.3.2).
-\newline
-
-\textbf{Note to Editors}: \stdremove{EXAMPLE 1} shall be \textbf{completely removed}.
 \end{modification}
+
+\begin{noted}
+In clause 7.5.5.1[expr.prim.id.general]/2, \textbf{remove completely} Example 1.
+\end{noted}
 
 
 \begin{modification}[{Removal of 7.5.5.2[expr.prim.id.unqual]/6}]
@@ -84,10 +85,9 @@ then the type of the expression is \texttt{const T}.}
 \end{itemize}
 \end{modification}
 
-\begin{modification}[{Removal of 7.5.5.2[expr.prim.id.unqual]/8}]
-\textbf{Note to Editors}: Example 2 shall be
-\textbf{completely removed}.
-\end{modification}
+\begin{noted}
+In clause 7.5.5.2[expr.prim.id.unqual]/8, \textbf{remove completely} Example 2.
+\end{noted}
 
 \begin{modification}[{Modification of 7.5.5.2[expr.prim.id.unqual]/12}]
 The expression is an xvalue if it is move-eligible (see below); an lvalue if the entity is a function, variable,
@@ -217,10 +217,11 @@ within the body of \emph{L}, the program is ill-formed.}
 
 \stdremove{NOTE 4 Adding a contract assertion to an existing C++ program
 cannot cause additional captures.}
-\newline
-
-\textbf{Note to Editors}: Also \textbf{completely remove the corresponding code example}.
 \end{modification}
+
+\begin{noted}
+In clause 7.5.6.2[expr.prim.lambda.closure]/10, \textbf{remove completely} Example 6.
+\end{noted}
 
 \begin{modification}[{Modification of 7.5.6.3[expr.prim.lambda.capture]/3}]
 A lambda-expression shall not have a \emph{capture-default} or
@@ -351,18 +352,30 @@ immediate scope is a namespace scope that follows the initializing declaration o
 \end{modification}
 
 \begin{modification}[{Modification of 7.7.5[expr.const.imm]/5}]
-\textbf{Note to Editors}: \textbf{Remove} the following lines from example
-\begin{verbatim}
-constexpr int l(int c) pre(c >= 2) {
-  return (c % 2 == 0) ? c / 0 : c;
+\noindent
+{\ttfamily\footnotesize
+...\\
+template<class T>\\
+constexpr int k(int) \char123\\
+\hspace*{2\fontdimen2\font}return A(42).y;\\
+\char125\\
+}\par
+\noindent
+\colorbox{red!60}{%
+  \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+    \ttfamily\footnotesize
+    \sout{constexpr int l(int c) pre(c >= 2) \{}\\%
+    \hspace*{2\fontdimen2\font}\sout{return (c \% 2 == 0) ? c / 0 : c;}\\%
+    \sout{\}}\\%
+    \sout{const int i0 = l(0); // dynamic initialization; contract violation or undefined behavior}\\%
+    \sout{const int i1 = l(1); // static initialization; value of 1 or contract violation at compile time}\\%
+    \sout{const int i2 = l(2); // dynamic initialization; undefined behavior}\\%
+    \sout{const int i3 = l(3); // static initialization; value of 3}%
+  }%
 }
-const int i0 = l(0); // dynamic initialization; contract violation or undefined behavior
-const int i1 = l(1); // static initialization; value of 1 or contract violation at compile time
-const int i2 = l(2); // dynamic initialization; undefined behavior
-const int i3 = l(3); // static initialization; value of 3
-\end{verbatim}
 
 \end{modification}
+
 
 \begin{modification}[{Modification of 7.7.7[expr.const.defns] Note 64}]
 64) Testing this condition can involve a notional evaluation of its
