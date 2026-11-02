@@ -1,9 +1,9 @@
-\section{Modifications to chapter 7}
+\section{Modifications to clause 7 (Expressions)}
 
-The following modifications shall be applied to chapter 7 (\emph{Expressions}
+The following modifications shall be applied to clause 7 (\emph{Expressions}
 [\texttt{expr}]):
 
-\begin{modification}[Removal of 7.5.3/3]
+\begin{modification}[{Removal of 7.5.3[expr.prim.this]/3}]
 \stdremove{If the expression this appears within the predicate of a contract assertion (6.11.1) (including as the result of an implicit transformation (7.5.5.1) and including in the bodies of nested
 \emph{lambda-expressions}) and the
 current class encloses the contract assertion, \texttt{const} is combined with
@@ -11,7 +11,7 @@ the \emph{cv-qualifier-seq} used to generate the
 resulting type (see below).}
 \end{modification}
 
-\begin{modification}[Modification of 7.5.5.1/2]
+\begin{modification}[{Modification of 7.5.5.1[expr.prim.id.general]/2}]
 If an id-expression \emph{E} denotes a non-static non-type member of some class
 \emph{C} at a point where the current class (7.5.3) is \emph{X} and
 
@@ -49,7 +49,7 @@ This transformation does not apply in the template definition context (13.8.3.2)
 \end{modification}
 
 
-\begin{modification}[Removal of 7.5.5.2/6]
+\begin{modification}[{Removal of 7.5.5.2[expr.prim.id.unqual]/6}]
 \stdremove{Otherwise, if the \emph{unqualified-id} names a result binding
 (9.4.2) attached to a function with return type \texttt{U},}
 
@@ -66,7 +66,7 @@ expression is \texttt{const T};}
 
 \end{modification}
 
-\begin{modification}[Removal of 7.5.5.2/7]
+\begin{modification}[{Removal of 7.5.5.2[expr.prim.id.unqual]/7}]
 \stdremove{Otherwise, if the \emph{unqualified-id} appears in the predicate of a contract
 assertion \emph{C} (6.11) and the entity is}
 
@@ -85,19 +85,19 @@ then the type of the expression is \texttt{const T}.}
 \end{itemize}
 \end{modification}
 
-\begin{modification}[Removal of 7.5.5.2/8]
+\begin{modification}[{Removal of 7.5.5.2[expr.prim.id.unqual]/8}]
 \textbf{Note to Editors}: Example 2 shall be
 \textbf{completely removed}.
 \end{modification}
 
-\begin{modification}[Modification of 7.5.5.2/12]
+\begin{modification}[{Modification of 7.5.5.2[expr.prim.id.unqual]/12}]
 The expression is an xvalue if it is move-eligible (see below); an lvalue if the entity is a function, variable,
 structured binding (9.7), \stdremove{result binding (9.4.2),} data member, 
 or template parameter object; and a prvalue
 otherwise (7.2.1); it is a bit-field if the identifier designates a bit-field.
 \end{modification}
 
-\begin{modification}[Removal of 7.5.5.2/13]
+\begin{modification}[{Removal of 7.5.5.2[expr.prim.id.unqual]/13}]
 \stdremove{If an \emph{id-expression E} appears in the predicate of a function contract
 assertion attached to a function \emph{f} and
 denotes a function parameter of \emph{f} and the implementation introduces any temporary objects to hold the
@@ -118,14 +118,14 @@ postcondition assertion.}
 
 \end{modification}
 
-\begin{modification}[Removal of 7.5.5.2/14]
+\begin{modification}[{Removal of 7.5.5.2[expr.prim.id.unqual]/14}]
 \stdremove{If an id-expression \emph{E} names a result binding in a postcondition assertion and the implementation introduces
 any temporary objects to hold the result object as specified in 6.8.7, and the postcondition assertion is
 sequenced before the initialization of the result object (7.6.1.3), \emph{E} refers to the most recently initialized such
 temporary object.}
 \end{modification}
 
-\begin{modification}[Removal of 7.5.5.3/7]
+\begin{modification}[{Removal of 7.5.5.3[expr.prim.id.qual]/7}]
 \stdremove{If \emph{Q} appears in the predicate of a contract assertion \emph{C}
 (6.11) and the entity is}
 
@@ -145,11 +145,11 @@ outside of \emph{C},}
 \stdremove{then the type of the expression is \texttt{const T}.}
 \end{modification}
 
-\begin{modification}[Modification of 7.5.5.3/8]
+\begin{modification}[{Modification of 7.5.5.3[expr.prim.id.qual]/8}]
 \stdremove{Otherwise, the} \stdadd{The} type of the expression is the type of the result.
 \end{modification}
 
-\begin{modification}[Modification of 7.5.6.1]
+\begin{modification}[{Modification of 7.5.6.1[expr.prim.lambda.general]}]
 lambda-expression :\\
 \tabto{1em}lambda-introducer attribute-specifier-seq\textsubscript{opt} lambda-declarator
 compound-statement\\
@@ -186,7 +186,7 @@ lambda-specifier-seq :\\
 \tabto{1em}lambda-specifier lambda-specifier-seq\textsubscript{opt}
 \end{modification}
 
-\begin{modification}[Modification of 7.5.6.2/7]
+\begin{modification}[{Modification of 7.5.6.2[expr.prim.lambda.closure]/7}]
 The function call operator or operator template is a static member function or static member function
 template (11.4.9.2) if the \emph{lambda-expression}’s
 \emph{parameter-declaration-clause} is followed by static. Otherwise,
@@ -208,7 +208,7 @@ corresponding \emph{lambda-expression}’s \emph{parameter-declaration-clause} i
 followed by \texttt{consteval}.
 \end{modification}
 
-\begin{modification}[Removal of 7.5.6.2/10]
+\begin{modification}[{Removal of 7.5.6.2[expr.prim.lambda.closure]/10}]
 \stdremove{If all potential references to a local entity implicitly captured by
 a \emph{lambda-expression L} occur within the function
 contract assertions (9.4.1) of the call operator or operator template of
@@ -223,7 +223,7 @@ cannot cause additional captures.}
 \textbf{Note to Editors}: Also \textbf{completely remove the corresponding code example}.
 \end{modification}
 
-\begin{modification}[Modification of 7.5.6.3/3]
+\begin{modification}[{Modification of 7.5.6.3[expr.prim.lambda.capture]/3}]
 A lambda-expression shall not have a \emph{capture-default} or
 \emph{simple-capture} in its \emph{lambda-introducer} unless
 
@@ -244,7 +244,7 @@ scope is the corresponding \emph{contract-assertion} scope (6.4.10).}
 
 \end{modification}
 
-\begin{modification}[Modification of 7.5.9/2.5]
+\begin{modification}[{Modification of 7.5.9[expr.prim.splice]/2.5}]
 Otherwise, if \emph{S} is a variable or a structured binding, \emph{S} shall either have static or thread storage duration
 or shall inhabit a scope enclosing the expression. The expression \emph{E} is an lvalue referring to the object
 or function \emph{X} associated with or referenced by \emph{S}, \stdadd{has the
@@ -275,7 +275,7 @@ adjusted to a non-reference type (7.2.2).
 
 \end{modification}
 
-\begin{modification}[Modification of 7.6.1.3/6]
+\begin{modification}[{Modification of 7.6.1.3[expr.call]/6}]
 When a function is called, each parameter (9.3.4.6) is initialized (9.5, 11.4.5.3) with its corresponding
 argument\stdremove{, and each precondition assertion of the function is
 evaluated (9.4.1)}. If the function is an explicit
@@ -285,7 +285,7 @@ argument, the default argument for the parameter is used.\\
 \ldots
 \end{modification}
 
-\begin{modification}[Modification of 7.6.1.3/7]
+\begin{modification}[{Modification of 7.6.1.3[expr.call]/7}]
 The \emph{postfix-expression} is sequenced before each expression in the
 \emph{expression-list} and any default argument.
 The initialization of a parameter or, if the implementation introduces any temporary objects to hold the
@@ -297,14 +297,15 @@ initialization of the parameter objects from those temporaries is indeterminatel
 the evaluation of each precondition assertion.}
 \end{modification}
 
-\begin{modification}[Removal of 7.6.1.3/9]
+\begin{modification}[{Removal of 7.6.1.3[expr.call]/9}]
 \stdremove{When the called function exits normally (8.8.4, 7.6.2.4), all postcondition assertions of the function are
 evaluated in sequence (9.4.1). If the implementation introduces any temporary objects to hold the result
 value as specified in 6.8.7, the evaluation of each postcondition assertion is indeterminately sequenced with
 respect to the initialization of any of those temporaries or the result object. These evaluations, in turn, are
 sequenced before the destruction of any function parameters.}
 \end{modification}
-\begin{modification}[Modification of 7.6.2.4/2]
+
+\begin{modification}[{Modification of 7.6.2.4[expr.await]/2}]
 An \emph{await-expression} shall appear only as a potentially evaluated
 expression within the \emph{compound-statement} of
 a \emph{function-body} or \emph{lambda-expression}, in either case outside of a
@@ -320,7 +321,7 @@ assertion (6.11).} A context within a function where an \emph{await-expression} 
 context of the function.
 \end{modification}
 
-\begin{modification}[Modification of 7.7.4]
+\begin{modification}[{Modification of 7.7.4[expr.const.init]}]
 A variable \texttt{v} is \emph{constant-initializable} if
 
 \begin{itemize}[label=\textemdash]
@@ -350,7 +351,7 @@ immediate scope is a namespace scope that follows the initializing declaration o
 
 \end{modification}
 
-\begin{modification}[Modification of 7.7.5/5]
+\begin{modification}[{Modification of 7.7.5[expr.const.imm]/5}]
 \textbf{Note to Editors}: \textbf{Remove} the following lines from example
 \begin{verbatim}
 constexpr int l(int c) pre(c >= 2) {
@@ -364,7 +365,7 @@ const int i3 = l(3); // static initialization; value of 3
 
 \end{modification}
 
-\begin{modification}[Modification of 7.7.7 Note 64]
+\begin{modification}[{Modification of 7.7.7[expr.const.defns] Note 64}]
 64) Testing this condition can involve a notional evaluation of its
 initializer\stdremove{, with evaluations of contract assertions using the
 ignore evaluation semantic (6.11.2)}, as described above.

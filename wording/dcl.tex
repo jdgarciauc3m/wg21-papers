@@ -1,16 +1,16 @@
-\section{Modifications to chapter 9}
+\section{Modifications to clause 9 (Declarations)}
 
-The following modifications shall be applied to chapter 9 (\emph{Declarations}
+The following modifications shall be applied to clause 9 (\emph{Declarations}
 [\texttt{dcl}]):
 
-\begin{modification}[Removal of 9.2.9.7.1/14]
+\begin{modification}[{Removal of 9.2.9.7.1[dcl.spec.auto.general]/14}]
 \stdremove{A result binding never has an undeduced placeholder type (9.4.2).}
 \newline
 
 \textbf{Note to Editors}: Also \textbf{remove completely} example 5.
 \end{modification}
 
-\begin{modification}[Modification of 9.3.1/1]
+\begin{modification}[{Modification of 9.3.1[dcl.decl.general]/1}]
  A declarator declares a single variable, function, or type, within a
 declaration. The \emph{init-declarator-list} appearing in a
 \emph{simple-declaration} is a \emph{comma-separated} sequence of declarators,
@@ -26,18 +26,18 @@ init-declarator :\\
 \stdremove{function-contract-specifier-seq\textsubscript{opt}}
 \end{modification}
 
-\begin{modification}[Removal of 9.3.1/5]
+\begin{modification}[{Removal of 9.3.1[dcl.decl.general]/5}]
 \stdremove{The optional \emph{function-contract-specifier-seq} (9.4.1) in an
 \emph{init-declarator} shall be present only if the declarator
 declares a function.}
 \end{modification}
 
-\begin{modification}[Removal of section 9.4]
+\begin{modification}[{Removal of section 9.4[dcl.contract]}]
 Section 9.4 (\emph{Function contract specifiers} [\texttt{dcl.contract}]) shall be 
 \textbf{completely removed}.
 \end{modification}
 
-\begin{modification}[Modification of 9.6.1/1]
+\begin{modification}[{Modification of 9.6.1[dcl.fct.def.general]/1}]
 Function definitions have the form\\
 
 function-definition :\\
@@ -59,19 +59,19 @@ deleted-function-body :\\
 \tabto{1em}= \texttt{delete} ( unevaluated-string ) ;\\
 \end{modification}
 
-\begin{modification}[Removal of 9.6.4/6 Note 1]
+\begin{modification}[{Removal of 9.6.4[dcl.fct.def.coroutine]/6 Note 1}]
 \stdremove{NOTE 1 An odr-use of a non-reference parameter in a postcondition assertion of a
 coroutine is ill-formed (9.4.1).}
 \end{modification}
 
-\begin{modification}[Modification of 9.13.1]
+\begin{modification}[{Modification of 9.13.1[dcl.attr.grammar]}]
 Attributes and annotations specify additional information for various source constructs such as types, variables,
 names, \stdremove{contract assertions,} blocks, or translation units.\\
 
 \ldots
 \end{modification}
 
-\begin{modification}[Modification of 9.13.8/2]
+\begin{modification}[{Modification of 9.13.8[dcl.attr.unused]/2}]
 The attribute may be applied to the declaration of a class, type alias, 
 variable (including a structured binding
 declaration), structured binding, \stdremove{result binding (9.4.2),} 
