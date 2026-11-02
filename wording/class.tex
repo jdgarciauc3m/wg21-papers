@@ -3,7 +3,7 @@
 The following modifications shall be applied to clause 11 (\emph{Classes}
 [\texttt{class}]):
 
-\begin{modification}[Modifications to 11.4.1 grammar rules]
+\begin{modification}[{Modifications to 11.4.1[class.mem.general] grammar rules}]
 Modify the following grammar production:\\
 
 member-declarator :
@@ -15,13 +15,13 @@ member-declarator :
 \tabto{1em}identifier\textsubscript{opt} attribute-specifier-seq\textsubscript{opt} : constant-expression brace-or-equal-initializer\textsubscript{opt}\\
 \end{modification}
 
-\begin{modification}[Removal of 11.4.1/2]
+\begin{modification}[{Removal of 11.4.1[class.mem.general]/2}]
 \stdremove{The optional \emph{function-contract-specifier-seq} (9.4.1) in a
 \emph{member-declarator} shall be present only if the declarator
 declares a function.}
 \end{modification}
 
-\begin{modification}[Modification of 11.4.1/10]
+\begin{modification}[{Modification of 11.4.1[class.mem.general]/10}]
 A \emph{complete-class} context of a class (template) is a
 
 \begin{itemize}[label=\textemdash]
@@ -51,12 +51,12 @@ NOTE 4 A \emph{complete-class} context of a nested class is also a
 class is defined within the \emph{member-specification} of the enclosing class.
 \end{modification}
 
-\begin{modification}[Modification of 11.8.1/7]
+\begin{modification}[{Modification of 11.8.1[class.access.general]/7}]
 \textbf{Note to Editors}: Remove all uses of \texttt{pre} and \texttt{post} in
 example 4.
 \end{modification}
 
-\begin{modification}[Modification of 11.9.3/16]
+\begin{modification}[{Modification of 11.9.3[class.base.init]/16}]
 Member functions (including virtual member functions, 11.7.3) can be called for an object under construction
 or destruction. Similarly, an object under construction or destruction can be
 the operand of the \texttt{typeid}
@@ -86,7 +86,7 @@ a \emph{ctor-initializer} (or in a function called directly or indirectly from a
 \stdremove{the program has undefined behavior.}
 \end{modification}
 
-\begin{modification}[Modification of 11.9.5/4]
+\begin{modification}[{Modification of 11.9.5[class.cdtor]/4}]
 Member functions, including virtual functions (11.7.3), can be called during
 construction or destruction (11.9.3).  When a virtual function is called
 directly or indirectly from a constructor or from a destructor, including during

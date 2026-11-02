@@ -3,7 +3,7 @@
 The following modifications shall be applied to clause 6 (\emph{Basics}
 [\texttt{basic}]):
 
-\begin{modification}[Modification of 6.1/5]
+\begin{modification}[{Modification of 6.1[basic.pre]/5}]
 Every name is introduced by a \emph{declaration}, which is a
 
 \begin{itemize}[label=\textemdash]
@@ -18,7 +18,7 @@ postcondition assertion (9.4.2),}
 
 \end{modification}
 
-\begin{modification}[Modification of 6.1/8]
+\begin{modification}[{Modification of 6.1[basic.pre]/8}]
 An entity is a variable, structured binding, \stdremove{result binding,} function, 
 enumerator, type, type alias, non-static
 data member, bit-field, template, namespace, namespace alias, template parameter, function parameter, or
@@ -26,12 +26,12 @@ init-capture. The underlying entity of an entity is that entity unless otherwise
 underlying entity of the entity declared by each declaration that introduces the name.
 \end{modification}
 
-\begin{modification}[Modification of 6.1/9]
+\begin{modification}[{Modification of 6.1[basic.pre]/9}]
 A \emph{local entity} is a variable with automatic storage duration (6.8.6.4), a structured binding (9.7) whose
 corresponding variable is such an entity, \stdremove{a result binding (9.4.2),} or the *this object (7.5.3).
 \end{modification}
 
-\begin{modification}[Modification of 6.3/10.2]
+\begin{modification}[{Modification of 6.3[basic.def.odr]/10.2}]
 \begin{itemize}[label=\textemdash]
 
 \item
@@ -59,7 +59,7 @@ scope.
 \end{itemize}
 \end{modification}
 
-\begin{modification}[Modification of 6.4.1/1]
+\begin{modification}[{Modification of 6.4.1[basic.scope.scope]/1}]
 The declarations in a program appear in a number of scopes that are in general discontiguous. The global scope
 contains the entire program; every other scope \emph{S} is introduced by a
 declaration, \emph{parameter-declaration-clause},
@@ -72,7 +72,7 @@ between a program point \emph{P} and a scope \emph{S} (that does not contain
 contain \emph{P}.
 \end{modification}
 
-\begin{modification}[Modification of 6.4.1/5]
+\begin{modification}[{Modification of 6.4.1[basic.scope.scope]/5}]
 A declaration is \emph{name-independent} if its name is \texttt{\_} (U+005F LOW
 LINE) and it declares
 
@@ -99,16 +99,16 @@ a non-static data member of other than an anonymous union.
 used or unused.
 \end{modification}
 
-\begin{modification}[Removal of 6.4.2/13]
+\begin{modification}[{Removal of 6.4.2[basic.scope.pdecl]/13}]
 \stdremove{The locus of a result-name-introducer (9.4.2) is immediately after it.}
 \end{modification}
 
-\begin{modification}[Removal of 6.4.10]
+\begin{modification}[{Removal of 6.4.10[basic.scope.contract]}]
 Section 6.4.10 (\emph{Contract-assertion scope} [\texttt{basic.scope.contract}])
 shall be \textbf{completely removed}.
 \end{modification}
 
-\begin{modification}[Modification of 6.8.6.5.2/5]
+\begin{modification}[{Modification of 6.8.6.5.2[basic.stc.dynamic.allocation]/5}]
 A global allocation function is only called as the result of a new expression (7.6.2.8), or called directly using
 the function call syntax (7.6.1.3), or called indirectly to allocate storage for a coroutine state (9.6.4), or called
 indirectly through calls to the functions in the C++ standard library.
@@ -123,7 +123,7 @@ duration (6.8.6.2), for objects or references with thread storage duration
 or for an exception object (14.2).
 \end{modification}
 
-\begin{modification}[Modification of 6.10.1/5]
+\begin{modification}[{Modification of 6.10.1[intro.execution]/5}]
 A \emph{full-expression} is
 
 \begin{itemize}[label=\textemdash]
@@ -154,7 +154,7 @@ full-expression.
 
 \end{modification}
 
-\begin{modification}[Modification of 6.10.1/11]
+\begin{modification}[{Modification of 6.10.1[[intro.execution]]/11}]
 When invoking a function \emph{f} (whether or not the function is inline), every argument expression and the postfix
 expression designating \emph{f} are sequenced before \stdremove{every
 precondition assertion of \emph{f} (9.4.1), which in turn are
@@ -162,7 +162,7 @@ sequenced before} every expression or statement in the body of f\stdremove{, whi
 postcondition assertion of \emph{f}}.
 \end{modification}
 
-\begin{modification}[Modification of 6.10.3.1/5]
+\begin{modification}[{Modification of 6.10.3.1[basic.start.main]/5}]
 A return statement (8.8.4) in \texttt{main} has the effect of leaving the main function (destroying any objects with
 automatic storage duration \stdremove{and evaluating any postcondition
 assertions of \texttt{main}}) and calling \texttt{std::exit} with
@@ -170,7 +170,7 @@ the return value as the argument. If control flows off the end of the compound-s
 is equivalent to a return with operand \texttt{0} (see also 14.4).
 \end{modification}
 
-\begin{modification}[Removal of 6.11]
+\begin{modification}[{Removal of 6.11[basic.contract]}]
 Section 6.11 (\emph{Contract assertions} [basic.contract]) shall be \textbf{completely
 removed}.
 \end{modification}

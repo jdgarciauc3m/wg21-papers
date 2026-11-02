@@ -3,7 +3,7 @@
 The following modifications shall be applied to clause 17 (\emph{Language
 support library} [\texttt{support}]):
 
-\begin{modification}[Modification of 17.1/2]
+\begin{modification}[{Modification of 17.1[support.general]/2}]
 The following subclauses describe common type definitions used throughout the
 library, characteristics of the predefined types, functions supporting start and
 termination of a C++ program, support for dynamic memory management, support
@@ -13,7 +13,7 @@ support for exception processing, support for initializer lists, and other
 runtime support, as summarized in Table 42.  
 \end{modification}
 
-\begin{modification}[Modification of Table 42]
+\begin{modification}[{Modification of Table 42 [tab:support.summary]}]
 Remove from Table 42 the following entry
 
 \begin{itemize}
@@ -26,7 +26,7 @@ Remove from Table 42 the following entry
 \end{modification}
 
 
-\begin{modification}[Modification of 17.3.2]
+\begin{modification}[{Modification of 17.3.2[version.syn]}]
 Each of the macros defined in \texttt{<version>} is also defined after inclusion 
 of any member of the set of library
 headers indicated in the corresponding comment in this synopsis.
@@ -49,7 +49,7 @@ NOTE Future revisions of this document might replace the values of these macros 
 
 \end{modification}
 
-\begin{modification}[Removal of 17.3.2/5]
+\begin{modification}[{Removal of 17.3.2[version.syn]/5}]
 \stdremove{The macro
 \texttt{\_\_cpp\_lib\_replaceable\_contract\_violation\_handler} is defined to
 the integer literal \texttt{202603L}
@@ -57,7 +57,7 @@ if the \emph{contract-violation} handler is replaceable, and to the integer
 literal 0 otherwise (6.11.3).}
 \end{modification}
 
-\begin{modification}[Removal of section 17.10]
+\begin{modification}[Removal of section 17.10[support.contract]]
 Section 17.10 (\emph{Contract-violation handling} [\texttt{support.contract}])
 shall be \textbf{completely removed}.
 \end{modification}
