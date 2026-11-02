@@ -303,7 +303,7 @@ evaluated in sequence (9.4.1). If the implementation introduces any temporary ob
 value as specified in 6.8.7, the evaluation of each postcondition assertion is indeterminately sequenced with
 respect to the initialization of any of those temporaries or the result object. These evaluations, in turn, are
 sequenced before the destruction of any function parameters.}
-\stdadd{If the implementation introduces any temporary objects to hold the result value as specified in 6.8.7, the initialization of those temporaries or the result object, is sequenced before the destruction of any function parameters.}
+\stdadd{If the implementation introduces any temporary objects to hold the result value as specified in 6.8.7, the initialization of those temporaries or the result object is sequenced before the destruction of any function parameters.}
 \end{modification}
 
 \begin{modification}[{Modification of 7.6.2.4[expr.await]/2}]
