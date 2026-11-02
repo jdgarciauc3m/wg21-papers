@@ -39,9 +39,9 @@ HoD Romania, SC22
 \newcommand{\stdremove}[1]{%
   \sbox{\mybox}{#1}%
   \ifdim\wd\mybox>\linewidth
-    \colorbox{red!60}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{#1}}%
+    \colorbox{red!60}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\sout{#1}}}%
   \else
-    \colorbox{red!60}{#1}%
+    \colorbox{red!60}{\sout{#1}}%
   \fi
 }
 
