@@ -33,7 +33,45 @@ HoD Romania, SC22
     \end{tcolorbox}
     \vspace{1em}
 }
+
+\newenvironment{noted}[1][Note to editors]
+{
+    \vspace{1em}
+    \noindent
+    \begin{tcolorbox}[
+      colback=white,
+      colframe=green!40!black,
+      title={\textbf{#1}},
+      breakable,
+      grow to left by=\@totalleftmargin,
+      width=\textwidth,
+      boxrule=0.5pt
+    ]
+}
+{
+    \end{tcolorbox}
+    \vspace{1em}
+}
+\newenvironment{removal}[1][Removal]
+{
+    \vspace{1em}
+    \noindent
+    \begin{tcolorbox}[
+      colback=white,
+      colframe=orange!60!black,
+      title={\textbf{Removal of #1}},
+      breakable,
+      grow to left by=\@totalleftmargin,
+      width=\textwidth,
+      boxrule=0.5pt
+    ]
+}
+{
+    \end{tcolorbox}
+    \vspace{1em}
+}
 \makeatother
+
 
 \newsavebox{\mybox}
 \newcommand{\stdremove}[1]{%
