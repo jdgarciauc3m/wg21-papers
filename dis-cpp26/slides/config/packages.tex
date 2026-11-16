@@ -1,0 +1,37 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+\usepackage{listings}
+\usepackage{palatino}
+\usepackage{lmodern}
+
+\usepackage{url}
+\usepackage{multicol}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+\usetikzlibrary{mindmap}
+
+\usepackage{ccicons}
+
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{environ}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.5}
+
+\tikzset{
+  invisible/.style={opacity=0},
+  visible on/.style={alt=#1{}{invisible}},
+  alt/.code args={<#1>#2#3}{%
+    \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+  },
+}
+
